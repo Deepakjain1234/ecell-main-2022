@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="./assets/js/gsap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@700&family=Oswald:wght@600&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet" />
+  <!-- Navbar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+
+<body style="margin: 0; padding: 0; overflow-y: hidden">
+  <div class="cuboid">
+    <div class="face front">
+      <img src="./assets/images/glow.png" alt="" style="
+            width: 78%;
+            position: fixed;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 2;
+            opacity: 0.2;
+            bottom: 0;
+          " srcset="" />
+      <div style="
+            width: 100%;
+            height: 139px;
+            position: fixed;
+            top: 0;
+            background: #00000000;
+            z-index: 1;
+            opacity: 0.75;
+          ">
+        <div style="
+              width: 76%;
+              height: 50%;
+              opacity: 0.39;
+              filter: contrast(1.3);
+              background: rgb(168, 126, 67);
+              background: linear-gradient(
+                90deg,
+                transparent 0%,
+                transparent 7%,
+                rgb(168 126 67 / 77%) 50%,
+                transparent 93%,
+                transparent 100%
+              );
+              /* border-top-left-radius: 40%; */
+              /* border-top-right-radius: 40%; */
+              margin-left: auto;
+              margin-right: auto;
+            "></div>
+        <div style="
+              width: 77%;
+              height: 50%;
+              margin-left: auto;
+              background: linear-gradient(
+                90deg,
+                #33000008 0%,
+                transparent 1%,
+                rgb(12 0 0 / 36%) 50%,
+                transparent 99%,
+                #33000008 100%
+              );
+              border-bottom-right-radius: 40%;
+              border-bottom-left-radius: 40%;
+              margin-right: auto;
+              /* border-bottom: solid 1px black; */
+            "></div>
+        <center>
+          <img src="./assets/images/logo.png" style="
+                position: absolute;
+                top: 0px;
+                /* padding: 4px; */
+                /* padding-top: 0px; */
+                /* margin-left: 45.5%; */
+                height: 86%;
+                margin-top: 11px;
+                filter: contrast(1.05);
+                box-shadow: 0px 0px 10px #000000;
+                border-radius: 50%;
+                opacity: 1;
+                margin-left: -50px;
+              " />
+        </center>
+      </div>
+      <div>Links</div>
+
+      <div style="margin-top: 10%; text-shadow: 0 0 12px #260000">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+          <!-- <a class="navbar-brand" href="">E-Cell</a> -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
+
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="">contact us</a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">past speakers</a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">speakers</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="">sponsors</a>
+              </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="">our team</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="">past events</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="">faqs</a>
+                </li>
+            </ul>
+          </div>
+
+        </nav>
+        <div id="heading" class="frontText neonText" style="
+              position: relative;
+              z-index: 1;
+              text-align: center;
+              opacity: 0;
+            " ;>
+          Entrepreneurship Cell
+        </div>
+        <div id="subHeading" class="frontText neonText" style="
+              position: relative;
+              z-index: 1;
+              text-align: center;
+              opacity: 0;
+            ">
+          NIT BHOPAL
+        </div>
+      </div>
+    </div>
+    <div class="face right">RIGHT</div>
+    <div class="face left">LEFT</div>
+    <div class="face back">BACK</div>
+    <div class="face top">TOP</div>
+    <div class="face bottom">BOTTOM</div>
+  </div>
+  <style>
+    .cuboid {}
+
+    .face {}
+
+    .front {}
+
+    .right {}
+
+    .left {}
+
+    .back {}
+
+    .top {}
+
+    .bottom {}
+
+    .frontText {
+      -webkit-transform: translate3d(0, 0, 0);
+      /* color: goldenrod; */
+      font-family: "montserrat", serif;
+      font-size: 4rem;
+      line-height: 1.203;
+      color: #ffffff;
+      /* background: -webkit-linear-gradient(#eee, #333); */
+      /* -webkit-background-clip: text; */
+      /* -webkit-text-fill-color: rgb(255, 152, 1); */
+    }
+
+    #subHeading {
+      font-size: 3em;
+      font-family: "oswald", serif;
+      margin-right: 8px;
+      transform: scale(1, 1.18);
+    }
+
+    .frontText div {
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+      display: inline-block;
+      position: relative;
+      margin-right: 5px;
+      color: white;
+
+      /* filter: contrast(1.25); */
+    }
+
+    canvas {
+      display: block;
+      width: 1229px;
+      height: 596px;
+      position: fixed;
+      top: 0;
+      z-index: 0;
+    }
+
+    .neonText {
+      /* color: #fff !important; */
+      /* text-shadow:0 0 0.5px #fff, 0 0 1px #fff, 0 0 15px #1b3049, 0 0 25px #000812 !important */
+      /* text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #5271ff,
+      0 0 82px #5271ff,
+      0 0 92px #5271ff,
+      0 0 102px #5271ff,
+      0 0 151px #5271ff !important; */
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+
+      z-index: 1;
+      margin-top: 0px;
+      padding: 0 0 1rem;
+        background-color:transparent;
+        text-align: left;
+
+    }
+
+    /* .navbar-brand {
+
+      font-family: "Ubuntu", sans-serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+    } */
+
+    .nav-item {
+      padding: 0 18px;
+    }
+
+    .nav-link {
+      font-size: 1.8rem;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 300;
+
+    }
+
+
+  </style>
+  <!-- <img src="logo.png" alt="" srcset="" style="
+width: 129px;
+height: auto;
+position: fixed;
+left: 43%;
+margin: 10px;
+margin-left: 0px;
+margin-right: 0px;
+"> -->
+  <!-- <div class="navbar" style="width:100%;position:fixed;top:0;background-color: #2234ae;
+background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+;padding:2em;"></div> -->
+  <script src="./assets/js/three.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+
+  <script>
+    var col = ["maroon", "black", "white", "white", "maroon"];
+
+    function updateCol(i, color) {
+      col[i] = color;
+    }
+
+    function textEffect1(textId) {
+      var a = document.getElementById(textId).innerText;
+      var b = a.split("");
+      for (var l in b) {
+        b[l] =
+          "<div class='shadowInherit'>" +
+          b[l].replace(" ", "&nbsp;") +
+          "</div>";
+      }
+      document.getElementById(textId).innerHTML =
+        "<div>" + b.join("") + "</div>";
+
+      var mySplitText = document
+        .getElementById(textId)
+        .getElementsByTagName("div"),
+        tl = new TimelineLite(),
+        numChars = mySplitText.length;
+
+      for (var i = 0; i < numChars; i++) {
+        if (i == 0) {
+          document.getElementById(textId).style.opacity = 1;
+        }
+        // mySplitText[i].style.opacity = 0.7 + Math.random();
+        //random value used as position parameter
+        tl.from(mySplitText[i], 2, {
+          opacity: 0
+        }, Math.random() * 2);
+      }
+    }
+
+    textEffect1("heading");
+    textEffect1("subHeading");
+
+    //intializing scene
+    const scene = new THREE.Scene();
+    var lightX, lightY, lightZ;
+    lightX = 10;
+    lightY = 0;
+    lightZ = 45;
+
+    //intializing renderer
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true
+    });
+
+    //initializing mesh
+    const geometry = new THREE.SphereGeometry(30, 100, 100);
+    const material = new THREE.MeshPhongMaterial({
+      color: "maroon",
+    });
+
+    const textureLoader = new THREE.TextureLoader();
+    const map = textureLoader.load("map2.jpg");
+    const stdMaterial = new THREE.MeshPhongMaterial();
+
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    //intializing ambient light
+    const ambientLight = new THREE.AmbientLight("white", 0.1);
+    scene.add(ambientLight);
+
+    //intializing point light
+    const light1 = new THREE.PointLight(col[0], 1.5, 40);
+    scene.add(light1);
+
+    const light2 = new THREE.PointLight(col[1], 1.2, 45); //deeppink
+    scene.add(light2);
+
+    const light3 = new THREE.PointLight(col[2], 0.4, 20);
+    // scene.add(light3);
+    const light4 = new THREE.PointLight(col[3], 0.4, 20);
+    scene.add(light4);
+    const light = new THREE.AmbientLight(col[4], 0.3); // soft white light
+    scene.add(light);
+
+    //intializingPointLightHelper
+    const pHelper1 = new THREE.PointLightHelper(light1);
+    scene.add(pHelper1);
+
+    function updateLight() {
+      renderer.render(scene, camera);
+      pHelper1.update();
+    }
+
+    //helper GUI
+    // const gui = new dat.GUI();
+    // gui.add(light2, "intensity", 0, 2, 0.01);
+    // gui.add(light2, "distance", 0, 40).onChange(updateLight);
+    // gui.add(light2.position, "x", -50, 50).onChange(updateLight);
+    // gui.add(light2.position, "y", -50, 50).onChange(updateLight);
+    // gui.add(light2.position, "z", -50, 50).onChange(updateLight);
+    // // makeXYZGUI(gui, light1.position, "position", updateLight);
+    // gui.addColor(new ColorGUIHelper(light1, "color"), "value").name("color");
+
+    //intializing axes
+    const axesHelper = new THREE.AxesHelper(5);
+    scene.add(axesHelper);
+
+    //intialzing camera
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      innerWidth / innerHeight,
+      1,
+      1000
+    );
+    camera.position.set(0, 0, 40);
+    camera.lookAt(0, 0, 0);
+    scene.add(camera);
+
+    //sizing and rendering
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.render(scene, camera);
+
+    //adding canvas
+    document.body.appendChild(renderer.domElement);
+
+    var t = 0;
+    var theta = 0;
+    var o = 100;
+    setInterval(function() {
+      theta += (0.1 * Math.PI) / 180;
+      var x = 25 * Math.cos(theta);
+      var y = 25 * Math.sin(theta);
+      t += 1 / 60;
+      lightX = x;
+      lightY = y;
+      lightZ = 10 * Math.sin((90 * t * Math.PI) / 180);
+      lightZ2 = 10 * Math.sin(((70 * t + 90) * Math.PI) / 180);
+      lightZ3 = 10 * Math.sin(((30 * t + 90) * Math.PI) / 180);
+      light1.position.set(lightX, lightY, 40 + lightZ);
+      // light3.position.set(0, -10, 35 + lightZ3);
+      // light4.position.set(0, 10, 35 + lightZ3);
+      light3.position.set(0, 8, 35);
+      light4.position.set(0, -8, 35);
+      light2.position.set(-1 * (lightX - 8), -1 * (lightY - 8), 55 + lightZ2);
+      // light3.position.set(-3, lightY, 30);
+      renderer.render(scene, camera);
+    }, 1000 / 60);
+  </script>
+</body>
+
+</html>
