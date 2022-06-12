@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
+<html lang="en" dir="ltr"><head>
   <meta charset="utf-8">
   <title></title>
   <!-- CSS LINK -->
-  <link rel="stylesheet" href="./assets/css/style2.css">
+  <link rel="stylesheet" href="../assets/css/style2.css">
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
   <!-- BOOTSTRAP -->
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -20,41 +15,54 @@
 </head>
 
 <body>
+    <style>
+ .speakers-text{
+    font-size:1em;
+}
+</style>
 <img class="backgr-img" src="https://www.westend61.de/images/0001111837pw/singapore-high-rise-buildings-low-angle-view-against-the-sun-SMAF01211.jpg" alt="">
   <section id="speakers">
-    <div id="speakers-carousel" class="carousel carousel-dark slide" data-bs-ride="false">
+    <div id="speakers-carousel" class="carousel carousel-dark slide" data-bs-ride="false" style="
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+">
       <div class="carousel-inner">
-        <div class="carousel-item active container-fluid">
+        <div class="carousel-item container-fluid">
           <h1 class="top">OUR SPEAKERS</h1>
-          <img class="speakers-image" src="./assets/images/man.png" alt="speaker-profile">
+          <img class="speakers-image" src="../assets/images/man.png" alt="speaker-profile">
           <strong class="speaker-name">Travis Klanik, Founder of SLicePay</strong>
         <h2 class="speakers-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h2>
         </div>
-        <div class="carousel-item  container-fluid">
+        <div class="carousel-item container-fluid">
           <h1 class="top">OUR SPEAKERS</h1>
-          <img class="speakers-image" src="./assets/images/man.png" alt="speaker-profile">
+          <img class="speakers-image" src="../assets/images/man.png" alt="speaker-profile">
           <strong class="speaker-name">Girish Bhagat,CEO of India Nivesh</strong>
           <h2 class="speakers-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h2>
          </div>
-        <div class="carousel-item  container-fluid">
+        <div class="carousel-item container-fluid active">
           <h1 class="top">OUR SPEAKERS</h1>
-          <img class="speakers-image" src="./assets/images/man.png" alt="speaker-profile">
+          <img class="speakers-image" src="../assets/images/man.png" alt="speaker-profile">
           <strong class="speaker-name">Sonam Wangchuk,Engineer and Innovator</strong>
           <h2 class="speakers-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h2>
         </div>
-        <div class="carousel-item  container-fluid">
+        <div class="carousel-item container-fluid">
           <h1 class="top">OUR SPEAKERS</h1>
-          <img class="speakers-image" src="./assets/images/man.png" alt="speaker-profile">
+          <img class="speakers-image" src="../assets/images/man.png" alt="speaker-profile">
           <strong class="speaker-name">Sachin Bansal,CEO of Flipkart</strong>
           <h2 class="speakers-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h2>
           </div>
         <div class="carousel-item container-fluid">
           <h1 class="top">OUR SPEAKERS</h1>
-          <img class="speakers-image" src="./assets/images/man.png" alt="speaker-profile">
+          <img class="speakers-image" src="../assets/images/man.png" alt="speaker-profile">
           <strong class="speaker-name">Speaker 5, New York</strong>
           <h2 class="speakers-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h2>
@@ -68,6 +76,7 @@
       </button>
     </div>
   </section>
-</body>
 
-</html>
+
+
+</body></html>
