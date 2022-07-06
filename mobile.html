@@ -1,0 +1,1796 @@
+<html lang="en" style="font-size: 9.375px">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./assets/js/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CSSRulePlugin.min.js"
+      integrity="sha512-oYnRsy+bFXYr+btXcKk2dpzfERnCUc5G4GkJ0AO/XSvomLV7Xc7tZVhTsYIz9QzOAw9qo/6qoA6JTpzaYuHUGg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&amp;family=Open+Sans:wght@700&amp;family=Oswald:wght@600&amp;family=Roboto+Condensed:wght@700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!--FONT AWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Play&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <style type="text/css">
+      .dg ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        clear: both;
+      }
+      .dg.ac {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        z-index: 0;
+      }
+      .dg:not(.ac) .main {
+        overflow: hidden;
+      }
+      .dg.main {
+        -webkit-transition: opacity 0.1s linear;
+        -o-transition: opacity 0.1s linear;
+        -moz-transition: opacity 0.1s linear;
+        transition: opacity 0.1s linear;
+      }
+      .dg.main.taller-than-window {
+        overflow-y: auto;
+      }
+      .dg.main.taller-than-window .close-button {
+        opacity: 1;
+        margin-top: -1px;
+        border-top: 1px solid #2c2c2c;
+      }
+      .dg.main ul.closed .close-button {
+        opacity: 1 !important;
+      }
+      .dg.main:hover .close-button,
+      .dg.main .close-button.drag {
+        opacity: 1;
+      }
+      .dg.main .close-button {
+        -webkit-transition: opacity 0.1s linear;
+        -o-transition: opacity 0.1s linear;
+        -moz-transition: opacity 0.1s linear;
+        transition: opacity 0.1s linear;
+        border: 0;
+        line-height: 19px;
+        height: 20px;
+        cursor: pointer;
+        text-align: center;
+        background-color: #000;
+      }
+      .dg.main .close-button.close-top {
+        position: relative;
+      }
+      .dg.main .close-button.close-bottom {
+        position: absolute;
+      }
+      .dg.main .close-button:hover {
+        background-color: #111;
+      }
+      .dg.a {
+        float: right;
+        margin-right: 15px;
+        overflow-y: visible;
+      }
+      .dg.a.has-save > ul.close-top {
+        margin-top: 0;
+      }
+      .dg.a.has-save > ul.close-bottom {
+        margin-top: 27px;
+      }
+      .dg.a.has-save > ul.closed {
+        margin-top: 0;
+      }
+      .dg.a .save-row {
+        top: 0;
+        z-index: 1002;
+      }
+      .dg.a .save-row.close-top {
+        position: relative;
+      }
+      .dg.a .save-row.close-bottom {
+        position: fixed;
+      }
+      .dg li {
+        -webkit-transition: height 0.1s ease-out;
+        -o-transition: height 0.1s ease-out;
+        -moz-transition: height 0.1s ease-out;
+        transition: height 0.1s ease-out;
+        -webkit-transition: overflow 0.1s linear;
+        -o-transition: overflow 0.1s linear;
+        -moz-transition: overflow 0.1s linear;
+        transition: overflow 0.1s linear;
+      }
+      .dg li:not(.folder) {
+        cursor: auto;
+        height: 27px;
+        line-height: 27px;
+        padding: 0 4px 0 5px;
+      }
+      .dg li.folder {
+        padding: 0;
+        border-left: 4px solid rgba(0, 0, 0, 0);
+      }
+      .dg li.title {
+        cursor: pointer;
+        margin-left: -4px;
+      }
+      .dg .closed li:not(.title),
+      .dg .closed ul li,
+      .dg .closed ul li > * {
+        height: 0;
+        overflow: hidden;
+        border: 0;
+      }
+      .dg .cr {
+        clear: both;
+        padding-left: 3px;
+        height: 27px;
+        overflow: hidden;
+      }
+      .dg .property-name {
+        cursor: default;
+        float: left;
+        clear: left;
+        width: 40%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .dg .cr.function .property-name {
+        width: 100%;
+      }
+      .dg .c {
+        float: left;
+        width: 60%;
+        position: relative;
+      }
+      .dg .c input[type="text"] {
+        border: 0;
+        margin-top: 4px;
+        padding: 3px;
+        width: 100%;
+        float: right;
+      }
+      .dg .has-slider input[type="text"] {
+        width: 30%;
+        margin-left: 0;
+      }
+      .dg .slider {
+        float: left;
+        width: 66%;
+        margin-left: -5px;
+        margin-right: 0;
+        height: 19px;
+        margin-top: 4px;
+      }
+      .dg .slider-fg {
+        height: 100%;
+      }
+      .dg .c input[type="checkbox"] {
+        margin-top: 7px;
+      }
+      .dg .c select {
+        margin-top: 5px;
+      }
+      .dg .cr.function,
+      .dg .cr.function .property-name,
+      .dg .cr.function *,
+      .dg .cr.boolean,
+      .dg .cr.boolean * {
+        cursor: pointer;
+      }
+      .dg .cr.color {
+        overflow: visible;
+      }
+      .dg .selector {
+        display: none;
+        position: absolute;
+        margin-left: -9px;
+        margin-top: 23px;
+        z-index: 10;
+      }
+      .dg .c:hover .selector,
+      .dg .selector.drag {
+        display: block;
+      }
+      .dg li.save-row {
+        padding: 0;
+      }
+      .dg li.save-row .button {
+        display: inline-block;
+        padding: 0px 6px;
+      }
+      .dg.dialogue {
+        background-color: #222;
+        width: 460px;
+        padding: 15px;
+        font-size: 13px;
+        line-height: 15px;
+      }
+      #dg-new-constructor {
+        padding: 10px;
+        color: #222;
+        font-family: Monaco, monospace;
+        font-size: 10px;
+        border: 0;
+        resize: none;
+        box-shadow: inset 1px 1px 1px #888;
+        word-wrap: break-word;
+        margin: 12px 0;
+        display: block;
+        width: 440px;
+        overflow-y: scroll;
+        height: 100px;
+        position: relative;
+      }
+      #dg-local-explain {
+        display: none;
+        font-size: 11px;
+        line-height: 17px;
+        border-radius: 3px;
+        background-color: #333;
+        padding: 8px;
+        margin-top: 10px;
+      }
+      #dg-local-explain code {
+        font-size: 10px;
+      }
+      #dat-gui-save-locally {
+        display: none;
+      }
+      .dg {
+        color: #eee;
+        font: 11px "Lucida Grande", sans-serif;
+        text-shadow: 0 -1px 0 #111;
+      }
+      .dg.main::-webkit-scrollbar {
+        width: 5px;
+        background: #1a1a1a;
+      }
+      .dg.main::-webkit-scrollbar-corner {
+        height: 0;
+        display: none;
+      }
+      .dg.main::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: #676767;
+      }
+      .dg li:not(.folder) {
+        background: #1a1a1a;
+        border-bottom: 1px solid #2c2c2c;
+      }
+      .dg li.save-row {
+        line-height: 25px;
+        background: #dad5cb;
+        border: 0;
+      }
+      .dg li.save-row select {
+        margin-left: 5px;
+        width: 108px;
+      }
+      .dg li.save-row .button {
+        margin-left: 5px;
+        margin-top: 1px;
+        border-radius: 2px;
+        font-size: 9px;
+        line-height: 7px;
+        padding: 4px 4px 5px 4px;
+        background: #c5bdad;
+        color: #fff;
+        text-shadow: 0 1px 0 #b0a58f;
+        box-shadow: 0 -1px 0 #b0a58f;
+        cursor: pointer;
+      }
+      .dg li.save-row .button.gears {
+        background: #c5bdad
+          url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==)
+          2px 1px no-repeat;
+        height: 7px;
+        width: 8px;
+      }
+      .dg li.save-row .button:hover {
+        background-color: #bab19e;
+        box-shadow: 0 -1px 0 #b0a58f;
+      }
+      .dg li.folder {
+        border-bottom: 0;
+      }
+      .dg li.title {
+        padding-left: 16px;
+        background: #000
+          url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==)
+          6px 10px no-repeat;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .dg .closed li.title {
+        background-image: url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==);
+      }
+      .dg .cr.boolean {
+        border-left: 3px solid #806787;
+      }
+      .dg .cr.color {
+        border-left: 3px solid;
+      }
+      .dg .cr.function {
+        border-left: 3px solid #e61d5f;
+      }
+      .dg .cr.number {
+        border-left: 3px solid #2fa1d6;
+      }
+      .dg .cr.number input[type="text"] {
+        color: #2fa1d6;
+      }
+      .dg .cr.string {
+        border-left: 3px solid #1ed36f;
+      }
+      .dg .cr.string input[type="text"] {
+        color: #1ed36f;
+      }
+      .dg .cr.function:hover,
+      .dg .cr.boolean:hover {
+        background: #111;
+      }
+      .dg .c input[type="text"] {
+        background: #303030;
+        outline: none;
+      }
+      .dg .c input[type="text"]:hover {
+        background: #3c3c3c;
+      }
+      .dg .c input[type="text"]:focus {
+        background: #494949;
+        color: #fff;
+      }
+      .dg .c .slider {
+        background: #303030;
+        cursor: ew-resize;
+      }
+      .dg .c .slider-fg {
+        background: #2fa1d6;
+        max-width: 100%;
+      }
+      .dg .c .slider:hover {
+        background: #3c3c3c;
+      }
+      .dg .c .slider:hover .slider-fg {
+        background: #44abda;
+      }
+    </style>
+    <style type="text/css">
+      .dg ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        clear: both;
+      }
+      .dg.ac {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        z-index: 0;
+      }
+      .dg:not(.ac) .main {
+        overflow: hidden;
+      }
+      .dg.main {
+        -webkit-transition: opacity 0.1s linear;
+        -o-transition: opacity 0.1s linear;
+        -moz-transition: opacity 0.1s linear;
+        transition: opacity 0.1s linear;
+      }
+      .dg.main.taller-than-window {
+        overflow-y: auto;
+      }
+      .dg.main.taller-than-window .close-button {
+        opacity: 1;
+        margin-top: -1px;
+        border-top: 1px solid #2c2c2c;
+      }
+      .dg.main ul.closed .close-button {
+        opacity: 1 !important;
+      }
+      .dg.main:hover .close-button,
+      .dg.main .close-button.drag {
+        opacity: 1;
+      }
+      .dg.main .close-button {
+        -webkit-transition: opacity 0.1s linear;
+        -o-transition: opacity 0.1s linear;
+        -moz-transition: opacity 0.1s linear;
+        transition: opacity 0.1s linear;
+        border: 0;
+        line-height: 19px;
+        height: 20px;
+        cursor: pointer;
+        text-align: center;
+        background-color: #000;
+      }
+      .dg.main .close-button.close-top {
+        position: relative;
+      }
+      .dg.main .close-button.close-bottom {
+        position: absolute;
+      }
+      .dg.main .close-button:hover {
+        background-color: #111;
+      }
+      .dg.a {
+        float: right;
+        margin-right: 15px;
+        overflow-y: visible;
+      }
+      .dg.a.has-save > ul.close-top {
+        margin-top: 0;
+      }
+      .dg.a.has-save > ul.close-bottom {
+        margin-top: 27px;
+      }
+      .dg.a.has-save > ul.closed {
+        margin-top: 0;
+      }
+      .dg.a .save-row {
+        top: 0;
+        z-index: 1002;
+      }
+      .dg.a .save-row.close-top {
+        position: relative;
+      }
+      .dg.a .save-row.close-bottom {
+        position: fixed;
+      }
+      .dg li {
+        -webkit-transition: height 0.1s ease-out;
+        -o-transition: height 0.1s ease-out;
+        -moz-transition: height 0.1s ease-out;
+        transition: height 0.1s ease-out;
+        -webkit-transition: overflow 0.1s linear;
+        -o-transition: overflow 0.1s linear;
+        -moz-transition: overflow 0.1s linear;
+        transition: overflow 0.1s linear;
+      }
+      .dg li:not(.folder) {
+        cursor: auto;
+        height: 27px;
+        line-height: 27px;
+        padding: 0 4px 0 5px;
+      }
+      .dg li.folder {
+        padding: 0;
+        border-left: 4px solid rgba(0, 0, 0, 0);
+      }
+      .dg li.title {
+        cursor: pointer;
+        margin-left: -4px;
+      }
+      .dg .closed li:not(.title),
+      .dg .closed ul li,
+      .dg .closed ul li > * {
+        height: 0;
+        overflow: hidden;
+        border: 0;
+      }
+      .dg .cr {
+        clear: both;
+        padding-left: 3px;
+        height: 27px;
+        overflow: hidden;
+      }
+      .dg .property-name {
+        cursor: default;
+        float: left;
+        clear: left;
+        width: 40%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .dg .cr.function .property-name {
+        width: 100%;
+      }
+      .dg .c {
+        float: left;
+        width: 60%;
+        position: relative;
+      }
+      .dg .c input[type="text"] {
+        border: 0;
+        margin-top: 4px;
+        padding: 3px;
+        width: 100%;
+        float: right;
+      }
+      .dg .has-slider input[type="text"] {
+        width: 30%;
+        margin-left: 0;
+      }
+      .dg .slider {
+        float: left;
+        width: 66%;
+        margin-left: -5px;
+        margin-right: 0;
+        height: 19px;
+        margin-top: 4px;
+      }
+      .dg .slider-fg {
+        height: 100%;
+      }
+      .dg .c input[type="checkbox"] {
+        margin-top: 7px;
+      }
+      .dg .c select {
+        margin-top: 5px;
+      }
+      .dg .cr.function,
+      .dg .cr.function .property-name,
+      .dg .cr.function *,
+      .dg .cr.boolean,
+      .dg .cr.boolean * {
+        cursor: pointer;
+      }
+      .dg .cr.color {
+        overflow: visible;
+      }
+      .dg .selector {
+        display: none;
+        position: absolute;
+        margin-left: -9px;
+        margin-top: 23px;
+        z-index: 10;
+      }
+      .dg .c:hover .selector,
+      .dg .selector.drag {
+        display: block;
+      }
+      .dg li.save-row {
+        padding: 0;
+      }
+      .dg li.save-row .button {
+        display: inline-block;
+        padding: 0px 6px;
+      }
+      .dg.dialogue {
+        background-color: #222;
+        width: 460px;
+        padding: 15px;
+        font-size: 13px;
+        line-height: 15px;
+      }
+      #dg-new-constructor {
+        padding: 10px;
+        color: #222;
+        font-family: Monaco, monospace;
+        font-size: 10px;
+        border: 0;
+        resize: none;
+        box-shadow: inset 1px 1px 1px #888;
+        word-wrap: break-word;
+        margin: 12px 0;
+        display: block;
+        width: 440px;
+        overflow-y: scroll;
+        height: 100px;
+        position: relative;
+      }
+      #dg-local-explain {
+        display: none;
+        font-size: 11px;
+        line-height: 17px;
+        border-radius: 3px;
+        background-color: #333;
+        padding: 8px;
+        margin-top: 10px;
+      }
+      #dg-local-explain code {
+        font-size: 10px;
+      }
+      #dat-gui-save-locally {
+        display: none;
+      }
+      .dg {
+        color: #eee;
+        font: 11px "Lucida Grande", sans-serif;
+        text-shadow: 0 -1px 0 #111;
+      }
+      .dg.main::-webkit-scrollbar {
+        width: 5px;
+        background: #1a1a1a;
+      }
+      .dg.main::-webkit-scrollbar-corner {
+        height: 0;
+        display: none;
+      }
+      .dg.main::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: #676767;
+      }
+      .dg li:not(.folder) {
+        background: #1a1a1a;
+        border-bottom: 1px solid #2c2c2c;
+      }
+      .dg li.save-row {
+        line-height: 25px;
+        background: #dad5cb;
+        border: 0;
+      }
+      .dg li.save-row select {
+        margin-left: 5px;
+        width: 108px;
+      }
+      .dg li.save-row .button {
+        margin-left: 5px;
+        margin-top: 1px;
+        border-radius: 2px;
+        font-size: 9px;
+        line-height: 7px;
+        padding: 4px 4px 5px 4px;
+        background: #c5bdad;
+        color: #fff;
+        text-shadow: 0 1px 0 #b0a58f;
+        box-shadow: 0 -1px 0 #b0a58f;
+        cursor: pointer;
+      }
+      .dg li.save-row .button.gears {
+        background: #c5bdad
+          url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==)
+          2px 1px no-repeat;
+        height: 7px;
+        width: 8px;
+      }
+      .dg li.save-row .button:hover {
+        background-color: #bab19e;
+        box-shadow: 0 -1px 0 #b0a58f;
+      }
+      .dg li.folder {
+        border-bottom: 0;
+      }
+      .dg li.title {
+        padding-left: 16px;
+        background: #000
+          url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==)
+          6px 10px no-repeat;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .dg .closed li.title {
+        background-image: url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==);
+      }
+      .dg .cr.boolean {
+        border-left: 3px solid #806787;
+      }
+      .dg .cr.color {
+        border-left: 3px solid;
+      }
+      .dg .cr.function {
+        border-left: 3px solid #e61d5f;
+      }
+      .dg .cr.number {
+        border-left: 3px solid #2fa1d6;
+      }
+      .dg .cr.number input[type="text"] {
+        color: #2fa1d6;
+      }
+      .dg .cr.string {
+        border-left: 3px solid #1ed36f;
+      }
+      .dg .cr.string input[type="text"] {
+        color: #1ed36f;
+      }
+      .dg .cr.function:hover,
+      .dg .cr.boolean:hover {
+        background: #111;
+      }
+      .dg .c input[type="text"] {
+        background: #303030;
+        outline: none;
+      }
+      .dg .c input[type="text"]:hover {
+        background: #3c3c3c;
+      }
+      .dg .c input[type="text"]:focus {
+        background: #494949;
+        color: #fff;
+      }
+      .dg .c .slider {
+        background: #303030;
+        cursor: ew-resize;
+      }
+      .dg .c .slider-fg {
+        background: #2fa1d6;
+        max-width: 100%;
+      }
+      .dg .c .slider:hover {
+        background: #3c3c3c;
+      }
+      .dg .c .slider:hover .slider-fg {
+        background: #44abda;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0px;
+      padding: 0px;
+      overflow-y: hidden;
+      height: 100vh;
+      background-color: black;
+    "
+  >
+    <div class="container">
+      <div
+        class="sub-container"
+        id="first"
+        style="
+          position: relative;
+          height: 100vh;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          align-content: center;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+       
+        <div
+          style="
+            width: 100%;
+            height: 139px;
+            position: fixed;
+            top: 0;
+            background: #00000000;
+            z-index: 6;
+            opacity: 0.75;
+          "
+        >
+          <div
+            id="strip1"
+            style="
+              width: 100%;
+              height: 50%;
+              opacity: 0.39;
+              filter: contrast(1.3);
+              /* border-top-left-radius: 40%; */
+              /* border-top-right-radius: 40%; */
+              margin-left: auto;
+              margin-right: auto;
+            "
+          ></div>
+          <!-- <div
+            id="strip1"
+            style="
+              width: 76%;
+              height: 50%;
+              opacity: 0.39;
+              filter: contrast(1.3);
+              background: rgb(168, 126, 67);
+              background: linear-gradient(
+                90deg,
+                transparent 0%,
+                transparent 7%,
+                rgb(168 126 67 / 77%) 50%,
+                transparent 93%,
+                transparent 100%
+              );
+              /* border-top-left-radius: 40%; */
+              /* border-top-right-radius: 40%; */
+              margin-left: auto;
+              margin-right: auto;
+            "
+          ></div>
+
+          <div
+            id="strip2"
+            style="
+              width: 77%;
+              height: 50%;
+              margin-left: auto;
+              background: linear-gradient(
+                90deg,
+                #33000008 0%,
+                transparent 1%,
+                rgb(12 0 0 / 36%) 50%,
+                transparent 99%,
+                #33000008 100%
+              );
+              border-bottom-right-radius: 100%;
+              border-bottom-left-radius: 100%;
+              margin-right: auto;
+              /* border-bottom: solid 1px black; */
+            "
+          ></div> -->
+          <!-- <img
+            id="logo"
+              src="./assets/images/logo.png"
+              style="
+                position: absolute;
+                top: 0px;
+                /* padding: 4px; */
+                /* padding-top: 0px; */
+                /* margin-left: 45.5%; */
+                height: 86%;
+                margin-top: 11px;
+                filter: contrast(1.15);
+                box-shadow: 0px 0px 10px #000000;
+                border-radius: 50%;
+                opacity: 1;
+              "
+            /> -->
+        </div>
+        <div
+          id="tagline1"
+          class="animate__animated animate__fadeInDown animate__delay-3s"
+          style="
+            /* position:
+        absolute; */
+            letter-spacing: 12px;
+            margin-left: 12px;
+            margin-bottom: 10px;
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(
+              to right,
+              #bf953f,
+              #fcf6ba,
+              #b38728,
+              #fbf5b7,
+              #aa771c
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-family: 'Codystar', cursive;
+            opacity: 0.5;
+          "
+        >
+          MakeThings
+        </div>
+        <div>
+          <div
+            id="heading"
+            class="frontText neonText"
+            style="
+              position: relative;
+              z-index: 1;
+              text-align: center;
+              opacity: 1;
+            "
+            ;=""
+          >
+            <div style="opacity: 0">
+              Entrepreneurship Cell
+            </div>
+          </div>
+          <div
+            id="subHeading"
+            class="frontText neonText"
+            style="
+              position: relative;
+              z-index: 1;
+              text-align: center;
+              opacity: 1;
+              margin-top: 2px;
+            "
+          >
+            <div style="opacity: 0">
+              NIT Bhopal
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="tagline2"
+          class="animate__animated animate__fadeInUp animate__delay-3s"
+          style="
+            letter-spacing: 40px;
+            font-size: 4em;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-left: 42px;
+            background: linear-gradient(
+              to right,
+              #bf953f,
+              #fcf6ba,
+              #b38728,
+              #fbf5b7,
+              #aa771c
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-family: 'Codystar', cursive;
+            opacity: 0.5;
+          "
+        >
+          Happen
+        </div>
+        <div class="social" style="
+        /* position: fixed; */
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        /* left: 8px; */
+        margin-top: 37px;
+        /* bottom: 13px; */
+        font-size: 2.5rem;
+      ">
+      <a href="www.google.com" class="animate__animated animate__fadeInUp animate__delay-5s" target="_blank" style=""><i class="fab fa-facebook-f"></i></a>
+      <a href="" class="animate__animated animate__fadeInUp animate__delay-5s" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="" class="animate__animated animate__fadeInUp animate__delay-5s" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="" class="animate__animated animate__fadeInUp animate__delay-5s" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+        <div
+          style="
+            position: fixed;
+            bottom: 0;
+            display: flex !important;
+            justify-content: center !important;
+            width: 100%;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              bottom: 0;
+              display: flex !important;
+              justify-content: center !important;
+              width: 100%;
+            "
+            class="animate__animated animate__fadeInUp animate__delay-4s"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: center !important;
+                align-items: center !important;
+                flex: 0 0 auto; /*cool*/
+                width: 95.666667%; /*89.666667% for mobile device, 27.666667% for pc*/
+              "
+            >
+              <a
+                style="
+                  position: absolute;
+                  z-index: 2;
+                  text-decoration: none;
+                  top: 15px;
+                  color: whitesmoke;
+                  background-color: transparent;
+                "
+                href="#about"
+              >
+                <div class="headShake">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="45"
+                    height="45"
+                    fill="currentColor"
+                    class="bi bi-arrow-down-short"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                style="fill: #313030ab"
+                viewBox="0 0 470 80"
+              >
+                <path
+                  class="a"
+                  d="M470,80c-49.807,0-90.23,0-157.843-45.005C287.294,18.418,267.483,0,235,0s-52.293,18.418-77.157,34.995C90.23,80,49.807,80,0,80H470Z"
+                  style=""
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sub-container"
+        style="color: white; position: relative; z-index: 3; overflow: hidden"
+        id="second"
+      >
+        <!-- particles.js container -->
+        <div id="particles-js">
+          <canvas
+            class="particles-js-canvas-el"
+            width="1170"
+            height="2532"
+            style="width: 100%; height: 100%"
+          ></canvas>
+        </div>
+        <div
+          style="
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25vh;
+          "
+        >
+          <div style="">
+            <h1
+              id="about-head"
+              style="
+                background-image: linear-gradient(
+                    51deg,
+                    rgb(211, 18, 151),
+                    rgb(81, 145, 213)
+                  ),
+                  url(./assets/images/noise.svg);
+                color: transparent;
+                width: 242px;
+                margin-left: auto;
+                margin-right: auto;
+                background-clip: text;
+                -webkit-background-clip: text;
+              "
+            >
+              ABOUT US
+            </h1>
+
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: center;
+              "
+            >
+              <div style="width: 40%; margin-left: 8%; margin-right: 2%">
+                <h4
+                  class="about-desc"
+                  style="
+                    /* float: left; */
+                    width: 100%;
+                    /* margin-right: 5%; */
+                    /* margin-left: 10%; */
+                  "
+                >
+                  <span>
+                    Entrepreneurship Cell NIT-Bhopal is a non-profit student
+                    organization that works to support and unleash the budding
+                    entrepreneurial minds and promote the start-up culture among
+                    the students.<br />
+                    We at E-Cell link students with mentors, seekers with
+                    investors and aspiring entrepreneurs with enduring
+                    entrepreneurs. By organizing several entrepreneurship
+                    development programmes and camps, skill development
+                    workshops and speaker sessions, hosting brainstorming
+                    competitions, we aim to promote the development of
+                    knowledge-based enterprises and open doors towards
+                    opportunities in inventive areas.<br />
+                    Connected with a prominent alumni network and established
+                    entrepreneurs,<br />E-Cell NIT-B thrives to serve the
+                    purpose of providing necessary resources and potential
+                    guidance to spirited individuals.</span
+                  >
+                </h4>
+              </div>
+              <div
+                style="
+                  width: 40%;
+                  margin-left: 2%;
+                  margin-right: 8%;
+                  margin-block-start: 1.33em;
+                  margin-block-end: 1.33em;
+                "
+              >
+                <center>VIDEO</center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sub-container"
+        style="
+          color: white;
+          position: relative;
+          z-index: 3;
+          background-color: white;
+        "
+        id="third"
+      >
+        <!-- sponsors -->
+      </div>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Codystar&family=Literata:opsz,wght@7..72,200&family=Montserrat:wght@700;900&family=Open+Sans:wght@700&family=Oswald:wght@600&family=Raleway:wght@100;400&family=Roboto+Condensed:wght@700&family=Roboto+Slab:wght@200;400&display=swap');
+
+          canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ z-index:8;position:absolute; width: 100%; height: 100%; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }.particles-js-canvas-el{opacity:0;}
+
+          .headShake{
+      animation-timing-function: ease-in-out;
+      animation-name: headShake;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+        }
+
+        @keyframes headShake{
+      0%
+        {transform: translateY(0)}
+      6.5%
+        {transform: translateY(-6px) rotateX(-9deg)}
+      18.5%
+        {transform: translateY(5px) rotateX(7deg)}
+      31.5%
+        {transform: translateY(-3px) rotateX(-5deg)}
+      43.5%
+        {transform: translateY(2px) rotateX(3deg)}
+      50%{
+        transform: translateY(0)
+        transform: translateY(0)
+      }
+      }
+          #first {
+            display: block;
+          }
+
+
+          #second {
+
+          }
+
+          .social a{
+            margin:1em;
+            cursor:pointer;
+            transition-duration: 500ms;
+            cursor:pointer;
+            color:white;
+          }
+          .social>a>i{
+            color:inherit;
+          }
+          .social a:nth-child(1):hover {
+            color:#4267B2 !important;
+          }
+          .social a:nth-child(2):hover {
+            color:#1DA1F2 !important;
+          }
+          .social a:nth-child(3):hover {
+            color:#cd486b !important;
+          }
+          .social a:nth-child(4):hover {
+            color:#FF0000 !important;
+          }
+
+          #about-head {
+            clip-path: polygon(0 100%, 0% 100%, 100% 100%);
+            opacity: 0;
+            transform: translateY(60px);
+            text-align: center;
+            font-family: "Raleway", sans-serif;
+            font-size: 1.9em;
+            letter-spacing: 9px;
+            margin-bottom: 0.5em;
+          }
+          .about-desc {
+            transform: translateY(60px);
+            font-family: "Literata", sans-serif !important;
+            font-weight: 200;
+            letter-spacing: 1px;
+            line-height: 2em;
+            font-size: 1em;
+            width: 100%;
+            text-align: justify;
+            font-size: 0.895em;
+            opacity: 1;
+            /* text-shadow:0px 2px 3px #290000; */
+            background:linear-gradient(          181deg,          rgb(255 255 255 / 100%),          rgb(255 255 255 / 8%) 48%,rgb(255 255 255 / 0%) 100%        );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+          }
+          .frontText {
+            -webkit-transform: translate3d(0, 0, 0);
+            /* color: goldenrod; */
+            font-family: "montserrat", serif;
+            font-size: 3.3rem;
+            /* line-height: 1.203; */
+            color: #ffffff;
+            /* background: -webkit-linear-gradient(#eee, #333); */
+            /* -webkit-background-clip: text; */
+            /* -webkit-text-fill-color: rgb(255, 152, 1); */
+          }
+          #subHeading {
+            font-size: 3.3em;
+            font-family: "oswald", serif;
+            transform: scale(1, 1.05);
+          }
+
+          .frontText div {
+            -webkit-font-smoothing: antialiased;
+            -moz-font-smoothing: antialiased;
+            display: inline-block;
+            position: relative;
+            color: white;
+
+            /* filter: contrast(1.25); */
+          }
+          canvas {
+            display: block;
+            width: 1229px;
+            height: 596px;
+            position: fixed;
+            top: 0;
+            z-index: 0;
+          }
+          .footer {
+            background: #000;
+            padding: 30px 0px;
+            font-family: "Play", sans-serif;
+            text-align: center;
+          }
+
+          .footer .row {
+            width: 100%;
+            margin: 1% 0%;
+            padding: 0.6% 0%;
+            color: gray;
+            font-size: 0.8em;
+          }
+
+          .footer .row a {
+            text-decoration: none;
+            color: gray;
+            transition: 0.5s;
+          }
+
+          .footer .row a:hover {
+            color: #fff;
+          }
+
+          .footer .row ul {
+            width: 100%;
+          }
+
+          .footer .row ul li {
+            display: inline-block;
+            margin: 0px 30px;
+          }
+
+          .footer .row a i {
+            font-size: 2em;
+            margin: 0% 1%;
+          }
+
+          @media (max-width: 720px) {
+            .footer {
+              text-align: left;
+              padding: 5%;
+            }
+            .footer .row ul li {
+              display: block;
+              margin: 10px 0px;
+              text-align: left;
+            }
+            .footer .row a i {
+              margin: 0% 3%;
+            }
+          }
+    </style>
+    <!-- <img src="logo.png" alt="" srcset="" style="
+width: 129px;
+height: auto;
+position: fixed;
+left: 43%;
+margin: 10px;
+margin-left: 0px;
+margin-right: 0px;
+"> -->
+    <!-- <div class="navbar" style="width:100%;position:fixed;top:0;background-color: #2234ae;
+background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+;padding:2em;"></div> -->
+    <script>
+      gsap.to("body", {
+        duration: 1,
+        "background-color": "#130f40",
+        "background-image":
+          "linear-gradient(315deg, #130f40 0%, #000000 65%)",
+      });
+    </script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 154, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+            image: { src: "img/github.svg", width: 100, height: 100 },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+          },
+          size: {
+            value: 2.8,
+            random: true,
+            anim: { enable: true, speed: 1, size_min: 0.1, sync: false },
+          },
+          line_linked: {
+            enable: false,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: false, mode: "repulse" },
+            onclick: { enable: false, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 400, line_linked: { opacity: 1 } },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+          },
+        },
+        retina_detect: true,
+      });
+      var count_particles, stats, update;
+      stats = new Stats();
+      stats.setMode(0);
+      stats.domElement.style.position = "absolute";
+      stats.domElement.style.left = "0px";
+      stats.domElement.style.top = "0px";
+      document.body.appendChild(stats.domElement);
+      count_particles = document.querySelector(".js-count-particles");
+      update = function () {
+        stats.begin();
+        stats.end();
+        if (
+          window.pJSDom[0].pJS.particles &&
+          window.pJSDom[0].pJS.particles.array
+        ) {
+          count_particles.innerText =
+            window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    </script>
+    <div
+      style="
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        cursor: pointer;
+        opacity: 0.9;
+        z-index: 10000;
+      "
+    >
+      <canvas
+        width="240"
+        height="144"
+        style="width: 80px; height: 48px; display: none"
+      ></canvas
+      ><canvas
+        width="240"
+        height="144"
+        style="width: 80px; height: 48px; display: none"
+      ></canvas
+      ><canvas
+        width="240"
+        height="144"
+        style="width: 80px; height: 48px; display: none"
+      ></canvas>
+    </div>
+    <script src="./assets/js/three.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"
+    ></script>
+
+    <script>
+      document.getElementsByTagName("canvas")[1].style.display = "none";
+      var col = ["maroon", "black", "white", "white", "maroon"];
+
+      function textEffect1(textId) {
+        var a = document.getElementById(textId).innerText;
+        var b = a.split("");
+        for (var l in b) {
+          b[l] =
+            "<div class='shadowInherit'>" +
+            b[l].replace(" ", "&nbsp;") +
+            "</div>";
+        }
+        document.getElementById(textId).innerHTML =
+          "<div>" + b.join("") + "</div>";
+
+        var mySplitText = document
+            .getElementById(textId)
+            .getElementsByTagName("div"),
+          tl = new TimelineLite(),
+          numChars = mySplitText.length;
+
+        for (var i = 0; i < numChars; i++) {
+          if (i == 0) {
+            document.getElementById(textId).style.opacity = 1;
+          }
+          // mySplitText[i].style.opacity = 0.7 + Math.random();
+          //random value used as position parameter
+          tl.from(mySplitText[i], 2, { opacity: 0 }, Math.random() * 2);
+        }
+      }
+
+      textEffect1("heading");
+      textEffect1("subHeading");
+
+      //intializing scene
+      const scene = new THREE.Scene();
+      var lightX, lightY, lightZ;
+      lightX = 10;
+      lightY = 0;
+      lightZ = 45;
+
+      //intializing renderer
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+
+      //initializing mesh
+      const geometry = new THREE.SphereGeometry(30, 100, 100);
+      const material = new THREE.MeshPhongMaterial({
+        color: "maroon",
+      });
+
+      const textureLoader = new THREE.TextureLoader();
+      const map = textureLoader.load("map2.jpg");
+      const stdMaterial = new THREE.MeshPhongMaterial();
+
+      const mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
+
+      //intializing ambient light
+      const ambientLight = new THREE.AmbientLight("white", 0.1);
+      scene.add(ambientLight);
+
+      //intializing point light
+      const light1 = new THREE.PointLight(col[0], 1.5, 40);
+      scene.add(light1);
+
+      const light2 = new THREE.PointLight(col[1], 1.2, 45); //deeppink
+      scene.add(light2);
+
+      const light3 = new THREE.PointLight(col[2], 0.4, 20);
+      // scene.add(light3);
+      const light4 = new THREE.PointLight(col[3], 0.4, 20);
+      scene.add(light4);
+      const light = new THREE.AmbientLight(col[4], 0.3); // soft white light
+      scene.add(light);
+      var lightArr = [light1, light2, light3, light4, light];
+      console.log(lightArr);
+      function updateCol(i, color) {
+        console.log(lightArr[i]);
+        lightArr[i].color = color;
+      }
+      //intializingPointLightHelper
+      const pHelper1 = new THREE.PointLightHelper(light1);
+      scene.add(pHelper1);
+
+      function updateLight() {
+        renderer.render(scene, camera);
+        pHelper1.update();
+      }
+
+      //helper GUI
+      // const gui = new dat.GUI();
+      // gui.add(light2, "intensity", 0, 2, 0.01);
+      // gui.add(light2, "distance", 0, 40).onChange(updateLight);
+      // gui.add(light2.position, "x", -50, 50).onChange(updateLight);
+      // gui.add(light2.position, "y", -50, 50).onChange(updateLight);
+      // gui.add(light2.position, "z", -50, 50).onChange(updateLight);
+      // // makeXYZGUI(gui, light1.position, "position", updateLight);
+      // gui.addColor(new ColorGUIHelper(light1, "color"), "value").name("color");
+
+      //intializing axes
+      const axesHelper = new THREE.AxesHelper(5);
+      scene.add(axesHelper);
+
+      //intialzing camera
+      const camera = new THREE.PerspectiveCamera(
+        45,
+        innerWidth / innerHeight,
+        1,
+        1000
+      );
+      camera.position.set(0, 0, 40);
+      camera.lookAt(0, 0, 0);
+      scene.add(camera);
+
+      //sizing and rendering
+      renderer.setSize(innerWidth, innerHeight);
+      renderer.render(scene, camera);
+
+      //adding canvas
+      // document.body.appendChild(renderer.domElement);
+
+      var t = 0;
+      var theta = 0;
+      var o = 100;
+      setInterval(function () {
+        theta += (0.1 * Math.PI) / 180;
+        var x = 25 * Math.cos(theta);
+        var y = 25 * Math.sin(theta);
+        t += 1 / 60;
+        lightX = x;
+        lightY = y;
+        lightZ = 10 * Math.sin((90 * t * Math.PI) / 180);
+        lightZ2 = 10 * Math.sin(((70 * t + 90) * Math.PI) / 180);
+        lightZ3 = 10 * Math.sin(((30 * t + 90) * Math.PI) / 180);
+        light1.position.set(lightX, lightY, 40 + lightZ);
+        // light3.position.set(0, -10, 35 + lightZ3);
+        // light4.position.set(0, 10, 35 + lightZ3);
+        light3.position.set(0, 8, 35);
+        light4.position.set(0, -8, 35);
+        light2.position.set(-1 * (lightX - 8), -1 * (lightY - 8), 55 + lightZ2);
+        // light3.position.set(-3, lightY, 30);
+        renderer.render(scene, camera);
+      }, 1000 / 60);
+    </script>
+    <script>
+      var noise = "./assets/images/noise.svg";
+      let tl2 = gsap.timeline({
+        defaults: { ease: "power4.inOut" },
+        paused: true,
+      });
+      tl2.to("#first", {
+        height: "0vh",
+        duration: 2,
+      });
+      // tl2.to('#first', {
+      //   'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
+      //   duration: 2.2,
+      // })
+      tl2.to(
+        "#about-head",
+        {
+          "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          opacity: 1,
+          y: 0,
+          duration: 2,
+        },
+        "<0.8"
+      );
+      tl2
+        .to(
+          ".about-desc",
+          {
+            y: 0,
+            color: "rgb(255, 255, 255, 90%)",
+            opacity: 0.8,
+            duration: 2.3,
+          },
+          "<"
+        )
+        .to(
+          ".about-desc",
+          {
+            opacity: 1,
+            duration: 3,
+          },
+          "<"
+        )
+        .to(
+          "body",
+          {
+            "background-color": "#000000",
+            background:
+              "linear-gradient(147deg, #000000 0%, #04619f 74%),url(" +
+              noise +
+              ")",
+            height: "100vh",
+            duration: 2,
+          },
+          "<"
+        )
+        .to(
+          "canvas",
+          {
+            height: "0px",
+            duration: 1,
+          },
+          "<"
+        )
+        .to(
+          "#strip1",
+          {
+            background:
+              "linear-gradient(90deg, transparent 0%, transparent 7%, rgb(4 63 103) 50%, transparent 93%, transparent 100%)",
+            duration: 0.5,
+          },
+          "<0.5"
+        )
+        .to(
+          "#strip2",
+          {
+            background:
+              "linear-gradient(90deg,#33000008 0%,transparent 1%,rgb(255 255 255 / 7%) 50%,transparent 99%,#33000008 100%)",
+            duration: 0.2,
+          },
+          "<+=0.7"
+        )
+        .to(
+          "#logo",
+          {
+            filter: "",
+            duration: 0.2,
+          },
+          "<"
+        )
+        .to(
+          ".particles-js-canvas-el",
+          {
+            height: "100vh",
+            opacity: 0.75,
+            duration: 2,
+          },
+          "<0.05"
+        );
+      // tl2.play(); //testpurpose
+      //timeline for sponsor section
+      let tl3 = gsap.timeline({
+        defaults: { ease: "power4.inOut" },
+        paused: true,
+      });
+      tl3
+        .to("#second", {
+          height: "0",
+          duration: 2,
+        })
+        // tl3.to('#second', {
+        //   'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
+        //   duration: 2.2,
+        // })
+        // tl3.to(
+        //   "#about-head",
+        //   {
+        //     "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        //     opacity: 1,
+        //     y: 0,
+        //     duration: 1.5,
+        //   },
+        //   "<0.8"
+        // );
+        // tl3
+        //   .to(
+        //     ".about-desc",
+        //     {
+        //       y: 0,
+        //       color: "rgb(255 255 255 / 77%)",
+        //       opacity: 1,
+        //       duration: 2,
+        //     },
+        //     "<"
+        //   )
+        //   .to(
+        //     ".about-desc",
+        //     {
+        //       opacity: 0.8,
+        //       duration: 3,
+        //     },
+        //     "<"
+        //   )
+        .to(
+          "#second",
+          {
+            height: "0px",
+            duration: 1,
+          },
+          "<"
+        )
+        .to(
+          "canvas",
+          {
+            height: "0px",
+            duration: 1,
+          },
+          "<"
+        )
+        .to(
+          "#strip1",
+          {
+            background:
+              "linear-gradient(90deg, transparent 0%, transparent 7%, rgb(4 63 103) 50%, transparent 93%, transparent 100%)",
+            duration: 0.5,
+          },
+          "<0.5"
+        )
+        .to(
+          "#strip2",
+          {
+            background:
+              "linear-gradient(90deg,#33000008 0%,transparent 1%,rgb(255 255 255 / 7%) 50%,transparent 99%,#33000008 100%)",
+            duration: 0.2,
+          },
+          "<+=0.7"
+        );
+      // tl2.reverse(0);
+      // startG2();
+      function startG2() {
+        var shmA = 0;
+        var angFxn = 0;
+        var extent = 0;
+        setInterval(function () {
+          shmA += 0.09;
+          angFxn = 147 + 2 * Math.sin((shmA * Math.PI) / 180);
+          extent = 64 + 10 * Math.sin((shmA * Math.PI) / 180);
+          document.body.style.background =
+            "linear-gradient(147deg, #000000 0%, #04619f " + extent + "%)";
+        }, 1000 / 60);
+      }
+    </script>
+  </body>
+</html>
