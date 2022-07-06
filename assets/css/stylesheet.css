@@ -356,6 +356,26 @@ canvas {
     z-index: 0;
 }
 
+
+#about-vid-mobile {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    opacity: 0;
+    transform: none !important;
+    -webkit-box-reflect: unset;
+    padding: unset;
+    box-sizing: border-box;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#video-parent-mobile{
+    display: none;
+}
+
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     #second{
         font-size: 13px;
@@ -390,10 +410,11 @@ canvas {
     }
 
     #video-parent {
+        display: none;
+    }
+
+    #video-parent-mobile {
         display: block;
-        -webkit-perspective: unset;
-        perspective: unset;
-        transform-style: unset;
     }
 
     #about-vid {

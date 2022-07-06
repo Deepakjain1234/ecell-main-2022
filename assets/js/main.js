@@ -236,6 +236,14 @@ tl2
         "<"
     )
     .to(
+        "#about-vid-mobile",
+        {
+            opacity: 1,
+            duration: 5,
+        },
+        "<"
+    )
+    .to(
         "body",
         {
             "background-color": "#000000",
