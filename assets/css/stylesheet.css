@@ -196,7 +196,7 @@ canvas {
     position: relative;
     z-index: 1;
     text-align: center;
-    /* opacity: 0; */
+    opacity: 0;
     transform: translateY(1px);
 }
 
@@ -208,7 +208,7 @@ canvas {
     position: relative;
     z-index: 1;
     text-align: center;
-    /* opacity: 0; */
+    opacity: 0;
 }
 /* /welcome page css */
 
