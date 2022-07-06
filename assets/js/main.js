@@ -360,10 +360,9 @@ tl4
 var currentPage = 1;
 setTimeout(function(){
     transition.playing = false;
-    tl2.play();
 }, 5000)
 window.addEventListener("wheel", function (e) {
-    if (e.wheelDelta < -5 && !transition.playing) {
+    if (e.wheelDelta < -1 && !transition.playing) {
         transition.playing = true;
         if (currentPage == 1) {
             tl2.play();
