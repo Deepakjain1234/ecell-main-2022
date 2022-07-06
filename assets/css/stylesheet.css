@@ -84,11 +84,6 @@ canvas {
     }
 }
 
-
-
-
-#second {}
-
 .social {
     position: fixed;
     z-index: 1000;
@@ -131,15 +126,26 @@ canvas {
 
 .sub-container {
     position: relative;
-    height: 100vh;
-    overflow: hidden;
+    /* height: 100vh; */
+    overflow: hidden !important;
+}
+
+#first {
+    display: block;
+    z-index:3;
+    height:100vh;
+}
+#second{
+    height:0vh;
+}
+#third{
+    height:0vh;
+}
+#fourth{
+    height:0vh;
 }
 
 /* welcome page css */
-#first {
-    display: block;
-}
-
 #d-flex {
     display: flex;
     flex-direction: column;

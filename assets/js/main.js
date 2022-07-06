@@ -181,10 +181,19 @@ let tl2 = gsap.timeline({
     },
     paused: true
 });
-tl2.to("#first", {
-    height: "0vh",
-    duration: 2,
-})
+tl2.to(
+        "#first", {
+        height: "0vh",
+        duration: 2,
+    }
+    )
+    .to(
+        "#second", {
+        height: "100vh",
+        duration: 2,
+    },
+        "<"
+    )
     .to(
         "#camel", {
         fill: "#ffffff29",
@@ -219,7 +228,7 @@ tl2.to("#first", {
     )
     .to(
         "#about-vid", {
-        opacity: 0.9,
+        opacity: 1,
         duration: 3,
     },
         "<"
@@ -227,7 +236,7 @@ tl2.to("#first", {
     .to(
         "body", {
         "background-color": "#000000",
-        background: "linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(4, 97, 159) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)",
+        background: "linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(50 2 41) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)",
         height: "100vh",
         duration: 1,
     },
@@ -256,19 +265,25 @@ tl2.to("#first", {
     },
         "<0.05"
     );
-// tl2.play(); //testpurpose
-//timeline for sponsor section
-
+    
 let tl3 = gsap.timeline({
     defaults: {
         ease: "power4.inOut"
     },
     paused: true
 })
-tl3.to("#second", {
-    height: "0",
-    duration: 2,
-})
+tl3.to(
+        "#second", {
+        height: "0",
+        duration: 2,
+    }
+    )
+    .to(
+        "#third", {
+        height: "100vh",
+        duration: 2,
+    }, "<"
+    )
     .to(
         "body", {
         height: "100vh",
@@ -310,10 +325,17 @@ window.addEventListener("wheel", function (e) {
             tl4.play();
             currentPage += 1;
         }
-        if(currentPage==2){
-            document.getElementsByClassName("particles-js-canvas-el")[0].style.display = "block";
-        } else {
-            document.getElementsByClassName("particles-js-canvas-el")[0].style.display = "none";
-        }
     }
 })
+
+
+//check for Navigation Timing API support
+if (window.performance) {
+    console.info("window.performance works fine on this browser");
+}
+console.info(performance.navigation.type);
+if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+   
+} else {
+    console.info( "This page is not reloaded");
+}
