@@ -226,6 +226,8 @@ tl2
         "#about-vid",
         {
             opacity: 1,
+            "-webkit-transform": "rotateY(-15deg) translateX(-60px)",
+            transform: "rotateY(-15deg) translateX(-60px)",
             duration: 3,
         },
         "<"

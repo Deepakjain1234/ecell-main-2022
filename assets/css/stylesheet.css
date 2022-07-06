@@ -32,7 +32,7 @@ canvas {
     padding-bottom: 2px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
-    display:none;
+    display: none;
 }
 
 .js-count-particles {
@@ -133,17 +133,20 @@ canvas {
 
 #first {
     display: block;
-    z-index:3;
-    height:100vh;
+    z-index: 3;
+    height: 100vh;
 }
-#second{
-    height:0vh;
+
+#second {
+    height: 0vh;
 }
-#third{
-    height:0vh;
+
+#third {
+    height: 0vh;
 }
-#fourth{
-    height:0vh;
+
+#fourth {
+    height: 0vh;
 }
 
 /* welcome page css */
@@ -217,6 +220,7 @@ canvas {
     text-align: center;
     opacity: 0;
 }
+
 /* /welcome page css */
 
 #arrow {
@@ -258,12 +262,35 @@ canvas {
     margin-bottom: 0.5em;
 }
 
+#about-child-three{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+#left {
+    width: 40%;
+    margin-left: 8%;
+    margin-right: 2%;
+}
+
+#right {
+    width: 40%;
+    margin-left: 2%;
+    margin-right: 8%;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+
+}
+
 .about-desc {
+    letter-spacing: 0.1em;
+    line-height: 2.2em;
     transform: translateY(200px) scale(0.9);
     font-family: 'Open Sans' !important;
     font-weight: 200;
-    letter-spacing: 1px;
-    line-height: 2em;
     font-size: 1em;
     width: 100%;
     text-align: justify;
@@ -274,17 +301,27 @@ canvas {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    opacity:0;
+    opacity: 0;
 }
 
-#about-vid{
+#video-parent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    -webkit-perspective: 1100px;
+    perspective: 500px;
+    transform-style: preserve-3d;
+}
+
+#about-vid {
     width: 100%;
     height: auto;
     border-radius: 6px;
     opacity: 0;
-    -webkit-transform: rotateY(-15deg) scale(1.04) translateX(-60px);
-    transform: rotateY(-15deg) scale(1.04) translateX(-60px);
-    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) 67%, rgb(0 0 0 / 10%));
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 67%, rgb(0 0 0 / 10%));
 }
 
 .frontText {
@@ -319,3 +356,55 @@ canvas {
     z-index: 0;
 }
 
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    #about-child-three {
+        display: block;
+        height: 100%;
+    }
+
+    #left {
+        width:100%;
+        margin-left: unset;
+        margin-right: unset;
+    }
+
+    .about-desc {
+        letter-spacing: 1px;
+        width: 75%;
+        transform: unset;
+        padding: 0px;
+        box-sizing: border-box;
+        margin: 0;
+        line-height: 1.4em;
+        font-size: 0.85em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #right {
+        width:100%;
+        margin: unset;
+    }
+
+    #video-parent {
+        display: block;
+        -webkit-perspective: unset;
+        perspective: unset;
+        transform-style: unset;
+    }
+
+    #about-vid {
+        width: 75%;
+        height: auto;
+        border-radius: 6px;
+        opacity: 0;
+        transform: none !important;
+        -webkit-box-reflect: unset;
+        padding: unset;
+        box-sizing: border-box;
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
