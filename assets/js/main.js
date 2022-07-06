@@ -280,7 +280,7 @@ tl2
     .to(transition, {
         playing: false,
     });
-
+tl2.play();
 let tl3 = gsap.timeline({
     defaults: {
         ease: "power4.inOut",
