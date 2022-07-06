@@ -193,7 +193,7 @@ tl2
     .to(
         "#second",
         {
-            height: "100vh",
+            height: "100%",
             duration: 2,
         },
         "<"
