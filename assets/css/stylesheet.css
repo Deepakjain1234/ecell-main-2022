@@ -32,6 +32,7 @@ canvas {
     padding-bottom: 2px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
+    display:none;
 }
 
 .js-count-particles {
@@ -258,7 +259,7 @@ canvas {
 }
 
 .about-desc {
-    transform: translateY(60px);
+    transform: translateY(200px) scale(0.9);
     font-family: 'Open Sans' !important;
     font-weight: 200;
     letter-spacing: 1px;
@@ -273,6 +274,17 @@ canvas {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    opacity:0;
+}
+
+#about-vid{
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    opacity: 0;
+    -webkit-transform: rotateY(-15deg) scale(1.04) translateX(-60px);
+    transform: rotateY(-15deg) scale(1.04) translateX(-60px);
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) 67%, rgb(0 0 0 / 10%));
 }
 
 .frontText {
