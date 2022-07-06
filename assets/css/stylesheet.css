@@ -431,7 +431,7 @@ canvas {
 
     .about-desc {
         letter-spacing: 1px;
-        width: 95%;
+        width: 90%;
         transform: unset !important;
         padding: 0px;
         box-sizing: border-box;
