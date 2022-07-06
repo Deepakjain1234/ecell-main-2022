@@ -399,7 +399,7 @@ canvas {
 
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     #second {
-        font-size: 12.8px;
+        font-size: 14px;
     }
 
     #about-child-one {
