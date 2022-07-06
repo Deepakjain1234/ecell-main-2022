@@ -435,4 +435,8 @@ canvas {
     .social{
         left:-5px;
     }
+
+    #arrow{
+        width:89.666667% !important;
+    }
 }
