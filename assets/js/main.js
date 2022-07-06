@@ -250,7 +250,7 @@ tl2
             "background-color": "#000000",
             background:
                 "linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(50 2 41) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)",
-            height: "100vh",
+            height: "100%",
             duration: 1,
         },
         "<"
