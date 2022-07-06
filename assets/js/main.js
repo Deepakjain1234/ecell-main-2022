@@ -4,7 +4,7 @@ gsap.to("body", {
         "linear-gradient(315deg, #130f40 0%, #000000 65%),url(./assets/images/noise-fine.svg)",
 });
 
-alert(window.height +','+ window.width);
+alert(window.innerHeight +','+ window.innerWidth);
 
 setTimeout(function () {
     document.body.style.background =
