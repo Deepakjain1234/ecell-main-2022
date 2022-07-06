@@ -307,7 +307,7 @@ tl3
     .to(
         "#third",
         {
-            height: "100vh",
+            height: "100%",
             duration: 2,
         },
         "<"
@@ -315,7 +315,7 @@ tl3
     .to(
         "body",
         {
-            height: "100vh",
+            height: "100%",
             duration: 3,
         },
         "<+1"
@@ -369,10 +369,10 @@ window.addEventListener("wheel", function (e) {
             tl2.play();
             currentPage += 1;
         } else if (currentPage == 2) {
-            tl3.play();
+            // tl3.play();
             currentPage += 1;
         } else if (currentPage == 3) {
-            tl4.play();
+            // tl4.play();
             currentPage += 1;
         }
     }

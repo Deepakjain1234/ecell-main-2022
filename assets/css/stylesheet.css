@@ -261,9 +261,31 @@ canvas {
     font-size: 1.9em;
     letter-spacing: 9px;
     margin-bottom: 0.5em;
+    margin-top: 1em;
+    background-image: linear-gradient(51deg,
+            rgb(211, 18, 151),
+            rgb(81, 145, 213)),
+        url(./assets/images/noise.svg);
+    color: transparent;
+    width: 242px;
+    margin-left: auto;
+    margin-right: auto;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
-#about-child-three{
+#about-child-one {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    margin-top:10em;
+}
+
+#about-child-three {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -305,7 +327,7 @@ canvas {
     opacity: 0;
 }
 
-#video-parent{
+#video-parent {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -373,21 +395,25 @@ canvas {
     display: block;
 }
 
-#video-parent-mobile{
+#video-parent-mobile {
     display: none;
 }
 
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
-    #second{
+    #second {
         font-size: 12.8px;
     }
 
-#about-child-one{
-    width: 100%;
-    height: 100%;
-    padding-top: 5em;
-    display: block
-}
+    #about-child-one {
+        width: 100%;
+        height: 100%;
+        padding-top: 5em;
+        display: block
+    }
+
+    #about-child-one{
+        margin-top:2em !important;
+    }
 
     #about-child-three {
         display: block;
@@ -395,14 +421,14 @@ canvas {
     }
 
     #left {
-        width:100%;
+        width: 100%;
         margin-left: unset;
         margin-right: unset;
     }
 
 
-    #about-head{
-        margin-top:0px !important;
+    #about-head {
+        margin-top: 0px !important;
     }
 
     .about-desc {
@@ -419,7 +445,7 @@ canvas {
     }
 
     #right {
-        width:100%;
+        width: 100%;
         margin: unset;
     }
 
@@ -446,11 +472,11 @@ canvas {
         display: block;
     }
 
-    .social{
-        left:-5px;
+    .social {
+        left: -5px;
     }
 
-    #arrow{
-        width:89.666667% !important;
+    #arrow {
+        width: 89.666667% !important;
     }
 }
