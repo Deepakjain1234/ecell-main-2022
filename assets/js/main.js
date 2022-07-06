@@ -114,7 +114,7 @@ setTimeout(function () {
 //             "remove": {
 //                 "particles_nb": 2
 //             }
-//         }
+//         }s
 //     },
 //     "retina_detect": true
 // });
@@ -138,7 +138,7 @@ setTimeout(function () {
 // requestAnimationFrame(update);
 
 
-document.getElementsByTagName('canvas')[1].style.display = "none";
+// document.getElementsByTagName('canvas')[1].style.display = "none";
 var tl;
 function textEffect1(textId) {
     var a = document.getElementById(textId).innerText;
