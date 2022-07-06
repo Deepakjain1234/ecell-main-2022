@@ -391,6 +391,11 @@ canvas {
         margin-right: unset;
     }
 
+
+    #about-head{
+        margin-top:0px !important;
+    }
+
     .about-desc {
         letter-spacing: 1px;
         width: 75%;
