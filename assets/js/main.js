@@ -1,4 +1,3 @@
-document.documentElement.requestFullscreen();
 
 gsap.to("body", {
     duration: 2,
