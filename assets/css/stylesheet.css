@@ -357,6 +357,9 @@ canvas {
 }
 
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
+    #second{
+        font-size: 13px;
+    }
     #about-child-three {
         display: block;
         height: 100%;
@@ -371,7 +374,7 @@ canvas {
     .about-desc {
         letter-spacing: 1px;
         width: 75%;
-        transform: unset;
+        transform: unset !important;
         padding: 0px;
         box-sizing: border-box;
         margin: 0;
@@ -406,5 +409,9 @@ canvas {
         margin-left: auto;
         margin-right: auto;
         display: block;
+    }
+
+    .social{
+        left:-5px;
     }
 }
