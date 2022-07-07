@@ -282,7 +282,7 @@ canvas {
     justify-content: center;
     align-content: center;
     align-items: flex-start;
-    margin-top:7em;
+    margin-top: 7em;
 }
 
 #about-child-three {
@@ -399,11 +399,11 @@ canvas {
     display: none;
 }
 
-#paragraphs > span{
-    position:relative;
+#paragraphs>span {
+    position: relative;
 }
 
-#paragraphs > span::after {
+#paragraphs>span::after {
     border-right: 1px solid white;
     border-top: 1px solid white;
     width: 30px;
@@ -416,7 +416,7 @@ canvas {
     content: " ";
 }
 
-#paragraphs > span::before {
+#paragraphs>span::before {
     border-left: 1px solid white;
     border-bottom: 1px solid white;
     width: 30px;
@@ -429,7 +429,7 @@ canvas {
     content: " ";
 }
 
-#right > #video-parent::after {
+#right>#video-parent::after {
     border-right: 1px solid white;
     border-top: 1px solid white;
     width: 30px;
@@ -440,10 +440,20 @@ canvas {
     opacity: 0.8;
     font-size: 4em;
     content: " ";
-    /* transform: rotateY(-15deg) translateX(-62px) scale(3) translateZ(-70px); */
+    animation: vpa 3s linear;
 }
 
-#right > #video-parent::before {
+@keyframes vpa {
+    from {
+        transform: rotateY(0deg) translateX(0px) scale(1) translateZ(0px);
+    }
+
+    to {
+        transform: rotateY(-15deg) translateX(-62px) scale(3) translateZ(-70px);
+    }
+}
+
+#right>#video-parent::before {
     border-left: 1px solid white;
     border-bottom: 1px solid white;
     width: 30px;
@@ -454,9 +464,18 @@ canvas {
     opacity: 0.9;
     font-size: 4em;
     content: " ";
-    /* transform: rotateY(-15deg) translateX(-76px) scale(1) translateZ(-30px); */
+    animation: vpb 3s linear;
 }
 
+@keyframes vpb {
+    from {
+        transform: rotateY(0deg) translateX(0px) scale(1) translateZ(0px);
+    }
+
+    to {
+        transform: rotateY(-15deg) translateX(-76px) scale(1) translateZ(-30px)
+    }
+}
 
 
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
@@ -471,8 +490,8 @@ canvas {
         display: block
     }
 
-    #about-child-one{
-        margin-top:2em !important;
+    #about-child-one {
+        margin-top: 2em !important;
     }
 
     #about-child-three {
@@ -536,17 +555,17 @@ canvas {
         left: -5px;
         background-color: #111;
         /* box-shadow: 0px 0px 14px 0px #0e010b94; */
-        border-top-right-radius:4px;
+        border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
         display: none;
     }
 
-    .social::after{
+    .social::after {
         content: "";
-        position:absolute;
+        position: absolute;
         right: -30px;
-        width:30px;
-        height:40px;
+        width: 30px;
+        height: 40px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         backdrop-filter: blur(11px);

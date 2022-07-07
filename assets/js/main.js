@@ -179,8 +179,6 @@ textEffect1("heading");
 textEffect1("subHeading");
 
 var noise = "./assets/images/noise.svg";
-var rule = CSSRulePlugin.getRule("#video-parent:before"),
-    rule2 = CSSRulePlugin.getRule("#video-parent:after");
 let tl2 = gsap.timeline({
     defaults: {
         ease: "power4.inOut",
@@ -238,24 +236,7 @@ tl2
         },
         "<"
     )
-    .to(
-        rule,
-        {
-            "-webkit-transform": "rotateY(-15deg) translateX(-76px) scale(1) translateZ(-30px)",
-            transform: "rotateY(-15deg) translateX(-76px) scale(1) translateZ(-30px)",
-            duration: 3,
-        },
-        "<"
-    )
-    .to(
-        rule2,
-        {
-            "-webkit-transform": "rotateY(-15deg) translateX(-62px) scale(3) translateZ(-70px)",
-            transform: "rotateY(-15deg) translateX(-62px) scale(3) translateZ(-70px)",
-            duration: 3,
-        },
-        "<"
-    )
+    
     .to(
         "#about-vid-mobile",
         {
