@@ -342,7 +342,8 @@ canvas {
 #about-vid {
     width: 100%;
     height: auto;
-    border-radius: 6px;
+    border-top-left-radius: 2px;
+    border-bottom-right-radius: 3px;
     opacity: 0;
     -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 67%, rgb(0 0 0 / 10%));
 }
@@ -403,7 +404,7 @@ canvas {
     position: relative;
 }
 
-#paragraphs>span::after {
+/* #paragraphs>span::after {
     border-right: 1px solid white;
     border-top: 1px solid white;
     width: 30px;
@@ -427,53 +428,60 @@ canvas {
     opacity: 0.9;
     font-size: 4em;
     content: " ";
-}
+} */
 
 #right>#video-parent::after {
-    border-right: 1px solid white;
-    border-top: 1px solid white;
+    border-right: solid 1px white;
+    border-top: solid 1px white;
     width: 30px;
     height: 30px;
     position: absolute;
-    right: -58px;
-    top: -58px;
-    opacity: 0.8;
+    right: -38px;
+    top: -38px;
+    opacity: 0;
     font-size: 4em;
     content: " ";
-    animation: vpa 3s linear;
+    animation-timing-function: ease-in-out;
+    animation: var(--vpaAnimVar,unset);
 }
 
 @keyframes vpa {
     from {
-        transform: rotateY(0deg) translateX(0px) scale(1) translateZ(0px);
+        transform: rotateY(0deg) translateX(0px) scale(1) translateZ(-20px);
+        opacity: 0;
     }
 
     to {
-        transform: rotateY(-15deg) translateX(-62px) scale(3) translateZ(-70px);
+        transform: rotateY(-15deg) translateX(-62px) scale(3) translateZ(0px);
+        opacity: 0.1;
     }
 }
 
 #right>#video-parent::before {
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
+    border-left: 1.5px solid white;
+    border-bottom: 1.5px solid white;
     width: 30px;
     height: 30px;
     position: absolute;
-    left: 28px;
-    bottom: 0px;
-    opacity: 0.9;
+    left: -20px;
+    bottom: -15px;
+    opacity: 0;
     font-size: 4em;
     content: " ";
-    animation: vpb 3s linear;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation: var(--vpbAnimVar,unset);
 }
 
 @keyframes vpb {
     from {
-        transform: rotateY(0deg) translateX(0px) scale(1) translateZ(0px);
+        transform: rotateY(0deg) translateX(-60px) translateY(40px) scale(1) translateZ(-101px);
+        opacity: 0;
     }
 
     to {
-        transform: rotateY(-15deg) translateX(-76px) scale(1) translateZ(-30px)
+        transform: rotateY(-15deg) translateX(-94px) translateY(20px) scale(1.25) translateZ(-101px);
+        opacity: 0.2;
     }
 }
 

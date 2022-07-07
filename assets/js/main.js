@@ -236,7 +236,11 @@ tl2
         },
         "<"
     )
-    
+    .add( function(){ 
+        let vp = document.getElementById('video-parent');
+        vp.style.setProperty('--vpaAnimVar','vpa 2s linear forwards');
+        vp.style.setProperty('--vpbAnimVar','vpb 2s linear forwards');
+    }, "<" )
     .to(
         "#about-vid-mobile",
         {
