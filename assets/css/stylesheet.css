@@ -399,6 +399,66 @@ canvas {
     display: none;
 }
 
+#paragraphs > span{
+    position:relative;
+}
+
+#paragraphs > span::after {
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -101%;
+    top: -21px;
+    opacity: 0.9;
+    font-size: 4em;
+    content: " ";
+}
+
+#paragraphs > span::before {
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -30px;
+    bottom: -25px;
+    opacity: 0.9;
+    font-size: 4em;
+    content: " ";
+}
+
+#right > #video-parent::after {
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -58px;
+    top: -58px;
+    opacity: 0.8;
+    font-size: 4em;
+    content: " ";
+    /* transform: rotateY(-15deg) translateX(-62px) scale(3) translateZ(-70px); */
+}
+
+#right > #video-parent::before {
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 28px;
+    bottom: 0px;
+    opacity: 0.9;
+    font-size: 4em;
+    content: " ";
+    /* transform: rotateY(-15deg) translateX(-76px) scale(1) translateZ(-30px); */
+}
+
+
+
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     #second {
         font-size: 16px;
