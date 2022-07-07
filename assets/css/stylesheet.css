@@ -127,28 +127,36 @@ canvas {
     color: #FF0000 !important;
 }
 
+.container{
+    height:100%;
+}
+
 .sub-container {
     position: relative;
     /* height: 100vh; */
-    overflow: hidden !important;
+    
 }
 
 #first {
     display: block;
     z-index: 3;
     height: 100vh;
+    overflow: hidden !important;
 }
 
 #second {
     height: 0vh;
+    overflow: hidden !important;
 }
 
 #third {
     height: 0vh;
+    overflow: hidden !important;
 }
 
 #fourth {
     height: 0vh;
+    overflow: hidden !important;
 }
 
 /* welcome page css */
@@ -225,7 +233,15 @@ canvas {
 
 /* /welcome page css */
 
-#arrow {
+.arrow-box{
+    position: absolute;
+    bottom: 0;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+}
+
+.arrow {
     display: flex;
     justify-content: center !important;
     align-items: center !important;
@@ -233,6 +249,27 @@ canvas {
     /*cool*/
     width: 27.666667%;
     /*89.666667% for mobile device, 27.666667% for pc*/
+}
+
+.arrow > a {
+	position: absolute;
+	z-index: 2;
+	text-decoration: none;
+	top: 15px;
+	color: whitesmoke;
+	background-color: transparent;
+}
+
+.camel {
+	fill: #313030ab
+}
+
+.amtd{
+    position: relative;
+	bottom: 0;
+	display: flex !important;
+	justify-content: center !important;
+	width: 100%;
 }
 
 .headShake {
@@ -487,6 +524,10 @@ canvas {
 
 
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .arrow{
+        width:89.666667%;
+    }
+
     #second {
         font-size: 16px;
     }
@@ -500,6 +541,7 @@ canvas {
 
     #about-child-one {
         margin-top: 2em !important;
+        margin-bottom: 100px;
     }
 
     #about-child-three {
@@ -592,5 +634,21 @@ canvas {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    }
+
+    #first {
+        overflow: scroll !important;
+    }
+    
+    #second {
+        overflow: scroll !important;
+    }
+    
+    #third {
+        overflow: scroll !important;
+    }
+    
+    #fourth {
+        overflow: scroll !important;
     }
 }

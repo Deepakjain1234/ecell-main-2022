@@ -194,6 +194,7 @@ tl2
         "#second",
         {
             height: "100%",
+            minHeight: "100vh",
             duration: 2,
         },
         "<"
