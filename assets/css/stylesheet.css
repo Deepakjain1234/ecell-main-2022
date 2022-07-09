@@ -559,6 +559,10 @@ canvas {
         margin-right: 0px;
     }
 
+    .arrow-box{
+        position: fixed;
+    }
+
     .arrow {
         width: 89.666667%;
     }
