@@ -2,7 +2,7 @@
 gsap.to("body", {
     duration: 2,
     "background-image":
-        "linear-gradient(315deg, #130f40 0%, #000000 65%),url(./assets/images/noise-fine.svg)",
+        "linear-gradient(315deg, #130f40 0%, #000000 40%),url(./assets/images/noise-fine.svg)",
 });
 
 // alert(window.innerHeight +','+ window.innerWidth);
