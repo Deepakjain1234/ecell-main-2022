@@ -529,6 +529,10 @@ canvas {
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     #d-flex {}
 
+    .frontText{
+        margin: 10px 0px;
+    }
+
     #first {
         font-size: 8px !important;
     }
