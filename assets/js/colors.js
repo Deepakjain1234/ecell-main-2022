@@ -79,7 +79,7 @@ tsParticles.load("tsparticles", {
       "connect": {
         "distance": 80,
         "links": {
-          "opacity": 0.5
+          "opacity": 0.3
         },
         "radius": 60
       },
@@ -292,7 +292,7 @@ tsParticles.load("tsparticles", {
       "distance": 100,
       "enable": true,
       "frequency": 1,
-      "opacity": 1,
+      "opacity": 0.5,
       "shadow": {
         "blur": 5,
         "color": {
@@ -380,7 +380,7 @@ tsParticles.load("tsparticles", {
         "factor": 1000
       },
       "limit": 0,
-      "value": 100
+      "value": 60
     },
     "opacity": {
       "random": {
