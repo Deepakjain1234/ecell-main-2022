@@ -193,13 +193,13 @@ tl4
   .to("#third", {
     height: "0",
     y: "-100vh",
-    duration: 2,
+    duration: 1,
   })
   .to(
     "#fourth",
     {
       height: "100vh",
-      duration: 2,
+      duration: 1,
     },
     "<"
   )
@@ -207,7 +207,7 @@ tl4
     "body",
     {
       height: "100vh",
-      duration: 3,
+      duration: 1.5,
     },
     "<+1"
   )
@@ -216,6 +216,11 @@ tl4
       transition.playing = false;
     }
   });
+
+
+tl2.timeScale(1.2);
+tl3.timeScale(1.2);
+tl4.timeScale(1.2);
 
 // tl2.reverse(0);
 var currentPage = 1;
