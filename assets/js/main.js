@@ -53,11 +53,11 @@ let tl2 = gsap.timeline({
   paused: true,
 });
 tl2
-  .add(function () {
-    if (tl2.reversed()) {
-      transition.playing = false;
-    }
-  })
+  // .add(function () {
+  //   if (tl2.reversed()) {
+  //     transition.playing = false;
+  //   }
+  // })
   .to(".arrow", {
     opacity: 0,
     duration: 0.5,
@@ -147,11 +147,11 @@ let tl3 = gsap.timeline({
   paused: true,
 });
 tl3
-  .add(function () {
-    if (tl3.reversed()) {
-      transition.playing = false;
-    }
-  })
+  // .add(function () {
+  //   if (tl3.reversed()) {
+  //     transition.playing = false;
+  //   }
+  // })
   .to("#second", {
     height: "0",
     duration: 2,
@@ -185,11 +185,11 @@ let tl4 = gsap.timeline({
   paused: true,
 });
 tl4
-  .add(function () {
-    if (tl4.reversed()) {
-      transition.playing = false;
-    }
-  })
+  // .add(function () {
+  //   if (tl4.reversed()) {
+  //     transition.playing = false;
+  //   }
+  // })
   .to("#third", {
     height: "0",
     y: "-100vh",
@@ -218,9 +218,9 @@ tl4
   });
 
 
-tl2.timeScale(1.8);
-tl3.timeScale(1.8);
-tl4.timeScale(1.8);
+tl2.timeScale(3);
+tl3.timeScale(3);
+tl4.timeScale(3);
 
 // tl2.reverse(0);
 var currentPage = 1;
