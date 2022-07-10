@@ -218,9 +218,9 @@ tl4
   });
 
 
-tl2.timeScale(1.2);
-tl3.timeScale(1.2);
-tl4.timeScale(1.2);
+tl2.timeScale(1.8);
+tl3.timeScale(1.8);
+tl4.timeScale(1.8);
 
 // tl2.reverse(0);
 var currentPage = 1;
