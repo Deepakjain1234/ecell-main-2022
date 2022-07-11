@@ -1,15 +1,15 @@
-
-
-gsap.to("body", {
+gsap.to("#background", {
   duration: 2,
   "background-image":
     "linear-gradient(315deg, #130f40 0%, #000000 50%),url(./assets/images/noise-fine.svg)",
 });
 
-setTimeout(function () {
-  document.body.style.background =
-    "linear-gradient(315deg, #130f40 0%, #000000 60%)";
-}, 2100);
+// ,radial-gradient(circle at left,#08071b 0vw,rgba(255,255,255,0) 36vw)
+
+// setTimeout(function () {
+//   document.body.style.background =
+//     "linear-gradient(315deg, #130f40 0%, #000000 60%)";
+// }, 2100);
 
 var tl;
 var transition = { playing: true };
@@ -58,12 +58,12 @@ tl2
   //     transition.playing = false;
   //   }
   // })
-  .to(".arrow", {
+  .to("#d-flex", {
     opacity: 0,
-    duration: 0.5,
+    duration: 2,
   })
   .to(
-    "#second",
+    "#second_",
     {
       height: "100%",
       duration: 2,
@@ -71,7 +71,7 @@ tl2
     "<+0.2"
   )
   .to(
-    "#first",
+    "#first_",
     {
       height: "0vh",
       duration: 2,
@@ -104,7 +104,7 @@ tl2
       opacity: 1,
       "-webkit-transform": "rotateY(-15deg) translateX(-60px)",
       transform: "rotateY(-15deg) translateX(-60px)",
-      duration: 3,
+      duration: 2,
     },
     "<"
   )
@@ -117,28 +117,21 @@ tl2
     "#about-vid-mobile",
     {
       opacity: 1,
-      duration: 5,
+      duration: 1.5,
     },
     "<"
   )
   .to(
-    "body",
+    "#background",
     {
       "background-color": "#000000",
       background:
         "linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(50 2 41) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)",
-      height: "100%",
       duration: 1,
     },
     "<"
   )
-  // linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(4, 97, 159) 74%), url("./assets/images/noise.svg") rgb(0, 0, 0)
-  
-  .add(function () {
-    if (!tl2.reversed()) {
-      transition.playing = false;
-    }
-  });
+  ;
 
 let tl3 = gsap.timeline({
   defaults: {
@@ -217,7 +210,6 @@ tl4
     }
   });
 
-
 tl2.timeScale(3);
 tl3.timeScale(3);
 tl4.timeScale(3);
@@ -232,42 +224,42 @@ setTimeout(function () {
   });
 }, 5000);
 
-window.addEventListener("wheel", function (e) {
-  console.log("step1");
-  if (e.wheelDelta <= -1 && !transition.playing) {
-    console.log("step2");
-    transition.playing = true;
-    if (currentPage == 1) {
-      console.log("1 to 2");
-      tl2.play();
-      currentPage += 1;
-    } else if (currentPage == 2) {
-      console.log("2 to 3");
-      tl3.play();
-      currentPage += 1;
-    } else if (currentPage == 3) {
-      console.log("3 to 4");
-      tl4.play();
-      currentPage += 1;
-    }
-  }
-  if (e.wheelDelta > 0) {
-    console.log("step3");
-    if (currentPage == 2 && !tl3.isActive() && !tl2.isActive()) {
-      console.log("2 to 1");
-      tl2.reverse();
-      currentPage -= 1;
-    } else if (currentPage == 3 && !tl4.isActive()  && !tl3.isActive()) {
-      console.log("3 to 2");
-      tl3.reverse();
-      currentPage -= 1;
-    } else if (currentPage == 4 && !tl4.isActive()  && !tl3.isActive()) {
-      console.log("4 to 3");
-      tl4.reverse();
-      currentPage -= 1;
-    }
-  }
-});
+// window.addEventListener("wheel", function (e) {
+//   console.log("step1");
+//   if (e.wheelDelta <= -1 && !transition.playing) {
+//     console.log("step2");
+//     transition.playing = true;
+//     if (currentPage == 1) {
+//       console.log("1 to 2");
+//       tl2.play();
+//       currentPage += 1;
+//     } else if (currentPage == 2) {
+//       console.log("2 to 3");
+//       tl3.play();
+//       currentPage += 1;
+//     } else if (currentPage == 3) {
+//       console.log("3 to 4");
+//       tl4.play();
+//       currentPage += 1;
+//     }
+//   }
+//   if (e.wheelDelta > 0) {
+//     console.log("step3");
+//     if (currentPage == 2 && !tl3.isActive() && !tl2.isActive()) {
+//       console.log("2 to 1");
+//       tl2.reverse();
+//       currentPage -= 1;
+//     } else if (currentPage == 3 && !tl4.isActive()  && !tl3.isActive()) {
+//       console.log("3 to 2");
+//       tl3.reverse();
+//       currentPage -= 1;
+//     } else if (currentPage == 4 && !tl4.isActive()  && !tl3.isActive()) {
+//       console.log("4 to 3");
+//       tl4.reverse();
+//       currentPage -= 1;
+//     }
+//   }
+// });
 
 //check for Navigation Timing API support
 if (window.performance) {

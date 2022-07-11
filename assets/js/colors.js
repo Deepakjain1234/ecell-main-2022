@@ -506,5 +506,7 @@ const particles = tsParticles.domItem(0);
 // play will start the animations, if the move is not enabled it won't enable it, it just updates the frame
 particles.play();
 
+document.getElementsByTagName("canvas")[0].style.zIndex = "2";
+
 // pause will stop the animations
 // particles.pause();

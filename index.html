@@ -30,7 +30,7 @@
 
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="./assets/css/stylesheet.css" />
-  
+
 </head>
 
 <body style="margin: 0; padding: 0;">
@@ -117,12 +117,16 @@
   </div>
   <!-- /social -->
 
+  <!-- background -->
+  <div id="background"></div>
+  <!-- /backgroudn -->
+
   <!-- main document container class -->
   <div class="container">
     <!-- subcontainer classes -->
 
     <!-- welcome page -->
-    <div class="sub-container" id="first">
+    <div class="sub-container scroll-box" id="first">
       <!-- welcome text -->
       <div id="d-flex">
         <div class="back-filter">
@@ -137,43 +141,44 @@
             <div id="subHeading" class="frontText">NIT BHOPAL</div>
           </div>
         </div>
-        <div  class="back-filter">
+        <div class="back-filter">
           <div id="tagline2" class="animate__animated animate__fadeInUp animate__delay-3s">
             Happen
           </div>
         </div>
+        <!-- arrow head -->
+        <div class="arrow-box oneHead">
+          <div class="amtd animate__animated animate__fadeInUp animate__delay-4s">
+            <div class="arrow">
+              <a href="#about">
+                <div class="headShake">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                    class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z" />
+                  </svg>
+                </div>
+              </a>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="camel"
+                viewBox="0 0 470 80">
+                <path class="a"
+                  d="M470,80c-49.807,0-90.23,0-157.843-45.005C287.294,18.418,267.483,0,235,0s-52.293,18.418-77.157,34.995C90.23,80,49.807,80,0,80H470Z">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- /arrow head -->
       </div>
 
       <!-- /welcome text -->
 
-      <!-- arrow head -->
-      <div class="arrow-box oneHead">
-        <div class="amtd animate__animated animate__fadeInUp animate__delay-4s">
-          <div class="arrow">
-            <a href="#about">
-              <div class="headShake">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
-                  class="bi bi-arrow-down-short" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z" />
-                </svg>
-              </div>
-            </a>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="camel"
-              viewBox="0 0 470 80">
-              <path class="a"
-                d="M470,80c-49.807,0-90.23,0-157.843-45.005C287.294,18.418,267.483,0,235,0s-52.293,18.418-77.157,34.995C90.23,80,49.807,80,0,80H470Z">
-              </path>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- /arrow head -->
+
     </div>
     <!-- /welcome page -->
 
     <!-- about-us -->
-    <div class="sub-container" style="color: white; position: relative; z-index: 3;" id="second">
+    <div class="sub-container scroll-box" style="color: white; margin-top:20px;position: relative; z-index: 3;" id="second">
 
       <div id="about-child-one" style="
           ">
@@ -251,14 +256,14 @@
           /* z-index: 3; */
           background-color: inherit;
         " id="third">
-    
+
     </div>
     <!-- /speakers page -->
 
     <!-- footer page -->
     <div class="sub-container" style="position: relative; z-index: 3; background-color: white" id="fourth">
       <div style="width: 100vw; height: 100vh; background: red">
-        
+
       </div>
     </div>
     <!-- /footer page -->
@@ -266,6 +271,61 @@
 </body>
 <script src="assets/js/app.js"></script>
 <script src="./assets/js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.js" integrity="sha512-Lp5HNBT3rdK4ciKlnzZg+Y3OQ8ey6lvT2KK4x4LJwQGCgqDVipBV8Lx68uDoxUYI0HjtpR2NqD7QMN6bNNWOHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  
+  
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollToPlugin);
+  
+      gsap.utils.toArray(".scroll-box").forEach(function (elem, i) {
+        ScrollTrigger.create({
+          trigger: elem,
+          onEnter: function ({ progress, direction, isActive }) {
+            console.log(
+              progress,
+              direction,
+              isActive,
+              elem.style.backgroundColor,
+              " entered from top"
+            );
+            gsap.to(window, {
+              duration: 0.3,
+              scrollTo: "#" + elem.id,
+              ease: Linear.easeNone,
+            });
+            if(i+1==2){
+              tl2.play();
+            }
+          },
+          onEnterBack: function ({ progress, direction, isActive }) {
+            console.log(
+              progress,
+              direction,
+              isActive,
+              elem.style.backgroundColor,
+              " entered from bottom"
+            );
+            gsap.to(window, {
+              duration: 0.3,
+              scrollTo: "#" + elem.id,
+              ease: Linear.easeNone,
+            });
+            if(i+1==1){
+              tl2.reverse();
+            }
+            
+          },
+          // onLeave: function () {
+  
+          // },
+        });
+      });
+    });
+  </script>
   
 </html>
