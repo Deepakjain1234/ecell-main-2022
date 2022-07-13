@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="main.css" />
+  <script src="./assets/js/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CSSRulePlugin.min.js"
     integrity="sha512-oYnRsy+bFXYr+btXcKk2dpzfERnCUc5G4GkJ0AO/XSvomLV7Xc7tZVhTsYIz9QzOAw9qo/6qoA6JTpzaYuHUGg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -34,6 +35,25 @@
 </head>
 
 <body style="margin: 0; padding: 0;">
+
+  <!-- Import maps polyfill -->
+  <!-- Remove this when import maps will be widely supported -->
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "../assets/js/build/three.module.js"
+        }
+      }
+    </script>
+  <script>
+    globalThis.SPEAKERS = "pause";
+
+  </script>
+  <script type="module" src="./assets/js/cards.js">
+    
+  </script>
+
 
   <!-- tsparticles -->
   <div id="tsparticles"></div>
@@ -119,7 +139,7 @@
 
   <!-- background -->
   <div id="background"></div>
-  <!-- /backgroudn -->
+  <!-- /background -->
 
   <!-- main document container class -->
   <div class="container">
@@ -178,7 +198,8 @@
     <!-- /welcome page -->
 
     <!-- about-us -->
-    <div class="sub-container scroll-box" style="color: white; margin-top:20px;position: relative; z-index: 3;" id="second">
+    <div class="sub-container scroll-box" style="color: white; margin-top:20px;position: relative; z-index: 3;"
+      id="second">
 
       <div id="about-child-one" style="
           ">
@@ -250,18 +271,23 @@
     <!-- /about-us -->
 
     <!-- speakers page -->
-    <div class="sub-container" style="
+    <div class="sub-container scroll-box" style="
           color: white;
           position: relative;
           /* z-index: 3; */
-          background-color: inherit;
+          /* background-color: inherit; */
+          /* border: solid 1px white; */
+          margin-top:60px;
+          opacity: 1;
         " id="third">
-
+      <div id="speakers">
+      </div>
     </div>
     <!-- /speakers page -->
 
     <!-- footer page -->
-    <div class="sub-container" style="position: relative; z-index: 3; background-color: white" id="fourth">
+    <div class="sub-container scroll-box"
+      style="margin-top:60px;position: relative; z-index: 3; background-color: white" id="fourth">
       <div style="width: 100vw; height: 100vh; background: red">
 
       </div>
@@ -271,61 +297,81 @@
 </body>
 <script src="assets/js/app.js"></script>
 <script src="./assets/js/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-  
-  
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.registerPlugin(ScrollToPlugin);
-  
-      gsap.utils.toArray(".scroll-box").forEach(function (elem, i) {
-        ScrollTrigger.create({
-          trigger: elem,
-          onEnter: function ({ progress, direction, isActive }) {
-            console.log(
-              progress,
-              direction,
-              isActive,
-              elem.style.backgroundColor,
-              " entered from top"
-            );
-            gsap.to(window, {
-              duration: 0.3,
-              scrollTo: "#" + elem.id,
-              ease: Linear.easeNone,
-            });
-            if(i+1==2){
-              tl2.play();
-            }
-          },
-          onEnterBack: function ({ progress, direction, isActive }) {
-            console.log(
-              progress,
-              direction,
-              isActive,
-              elem.style.backgroundColor,
-              " entered from bottom"
-            );
-            gsap.to(window, {
-              duration: 0.3,
-              scrollTo: "#" + elem.id,
-              ease: Linear.easeNone,
-            });
-            if(i+1==1){
-              tl2.reverse();
-            }
-            
-          },
-          // onLeave: function () {
-  
-          // },
-        });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
+
+    gsap.utils.toArray(".scroll-box").forEach(function (elem, i) {
+      ScrollTrigger.create({
+        trigger: elem,
+        onEnter: function ({ progress, direction, isActive }) {
+          console.log(
+            progress,
+            direction,
+            isActive,
+            elem.style.backgroundColor,
+            " entered from top"
+          );
+          gsap.to(window, {
+            duration: 0.3,
+            scrollTo: "#" + elem.id,
+            ease: Linear.easeNone,
+          });
+          if (i + 1 == 2) {
+            gsap.to("#d-flex", {
+              opacity: 0,
+              duration: 2,
+            })
+            tl2.progress(0).play();
+          }
+          if (i + 1 == 3) {
+            tl3.progress(0).play();
+            SPEAKERS = "start";
+          }
+        },
+        onEnterBack: function ({ progress, direction, isActive }) {
+          console.log(
+            progress,
+            direction,
+            isActive,
+            elem.style.backgroundColor,
+            " entered from bottom"
+          );
+          gsap.to(window, {
+            duration: 0.3,
+            scrollTo: "#" + elem.id,
+            ease: Linear.easeNone,
+          });
+          if (i + 1 == 1) {
+            tl2.progress(1).reverse();
+            gsap.to("#d-flex", {
+              opacity: 1,
+              duration: 2,
+            })
+          }
+          if (i + 1 == 2) {
+            tl2.restart();
+            tl3.reverse();
+            tl2.progress(0.3).play();
+            console.log("entered 2 from bottom");
+          }
+          if (i + 1 == 3) {
+          }
+
+        },
+        onLeave: function () {
+
+        }, 
       });
     });
-  </script>
-  
+  });
+</script>
+
 </html>
