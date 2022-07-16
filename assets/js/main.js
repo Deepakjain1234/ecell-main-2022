@@ -58,7 +58,7 @@ tl2
   {
     
     "background":
-      'linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(50, 2, 41) 90%), url("./assets/images/noise.svg")',
+      'linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(50, 2, 41) 70%), url("./assets/images/noise.svg")',
     duration: 3,
   },
   "<"
@@ -114,55 +114,33 @@ let tl3 = gsap.timeline({
   },
   paused: true,
 });
+// linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(2 54 56) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)
 tl3
   .to("#background", {
     "background":
-      "linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(2 54 56) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)",
+      "#00204f4f",
     duration: 3,
   });
 
-let tl4 = gsap.timeline({
-  defaults: {
-    ease: "power4.inOut",
-  },
-  paused: true,
-});
 
-tl4
-  // .add(function () {
-  //   if (tl4.reversed()) {
-  //     transition.playing = false;
-  //   }
-  // })
-  .to("#third", {
-    height: "0",
-    y: "-100vh",
-    duration: 1,
-  })
-  .to(
-    "#fourth",
-    {
-      height: "100vh",
-      duration: 1,
+  let tl4= gsap.timeline({
+    defaults: {
+      ease: "power4.inOut",
     },
-    "<"
-  )
-  .to(
-    "body",
-    {
-      height: "100vh",
-      duration: 1.5,
-    },
-    "<+1"
-  )
-  .add(function () {
-    if (!tl4.reversed()) {
-      transition.playing = false;
-    }
+    paused: true,
   });
+  // linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(2 54 56) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)
+  tl4
+    .to("#background_", {
+      "background":
+        "#00204f4f",
+      duration: 3,
+    });
+  
 
-tl2.timeScale(1.5);
-tl3.timeScale(1.5);
+tl2.timeScale(2);
+tl3.timeScale(2);
+tl4.timeScale(2);
 
 // tl2.reverse(0);
 var currentPage = 1;

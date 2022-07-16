@@ -51,7 +51,7 @@
 
   </script>
   <script type="module" src="./assets/js/cards.js">
-    
+
   </script>
 
 
@@ -285,9 +285,18 @@
     </div>
     <!-- /speakers page -->
 
+    <!-- sponsors page -->
+    <div class="sub-container scroll-box"
+      style="margin-top:60px;position: relative; z-index: 3;" id="fourth">
+      <div style="width: 100vw; height: 100vh;    clip-path:ellipse(67% 35.2% at 50% 92%);">
+        <video src="./media/videos/bg-movie_x264_.mp4" class="bg-movie" poster="./media/images/Screenshot (25).png" autoplay></video>
+      </div>
+    </div>
+    <!-- /sponsors page -->
+
     <!-- footer page -->
     <div class="sub-container scroll-box"
-      style="margin-top:60px;position: relative; z-index: 3; background-color: white" id="fourth">
+      style="margin-top:60px;position: relative; z-index: 3; background-color: white" id="fifth">
       <div style="width: 100vw; height: 100vh; background: red">
 
       </div>
@@ -303,7 +312,7 @@
 <script>
 
   document.addEventListener("DOMContentLoaded", function () {
-    
+
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
@@ -316,7 +325,7 @@
             progress,
             direction,
             isActive,
-            elem.style.backgroundColor,
+            elem,
             " entered from top"
           );
           gsap.to(window, {
@@ -334,6 +343,12 @@
           if (i + 1 == 3) {
             tl3.progress(0).play();
             SPEAKERS = "start";
+            console.log("entered 3 from top");
+          }
+          if (i + 1 == 4) {
+            tl4.progress(0).play();
+            console.log("entered 4 from top");
+
           }
         },
         onEnterBack: function ({ progress, direction, isActive }) {
@@ -341,7 +356,7 @@
             progress,
             direction,
             isActive,
-            elem.style.backgroundColor,
+            elem,
             " entered from bottom"
           );
           gsap.to(window, {
@@ -359,16 +374,24 @@
           if (i + 1 == 2) {
             tl2.restart();
             tl3.reverse();
-            tl2.progress(0.3).play();
+            tl2.progress(0).play();
             console.log("entered 2 from bottom");
           }
           if (i + 1 == 3) {
+            tl3.restart();
+            tl4.reverse();
+            tl3.play();
+            console.log("entered 3 from bottom");
+          }
+
+          if (i + 1 == 4) {
+            console.log("entered 4 from bottom");
           }
 
         },
         onLeave: function () {
 
-        }, 
+        },
       });
     });
   });

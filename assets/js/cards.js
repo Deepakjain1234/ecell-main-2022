@@ -98,186 +98,6 @@ const table = [
   "Position1",
   1,
   1,
-  "Z2speaker1",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker2",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker3",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker4",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker5",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker6",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker7",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker8",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker9",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker10",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker11",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker12",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker13",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker14",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker15",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker16",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker17",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z2speaker18",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker1",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker2",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker3",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker4",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker5",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker6",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker7",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker8",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker9",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker10",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker11",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker12",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker13",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker14",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker15",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker16",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker17",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "Z3speaker18",
-  "Organization1",
-  "Position1",
-  1,
-  1,
 ];
 
 console.log(table.length / 5);
@@ -343,10 +163,10 @@ function init() {
 
   for (let i = 0; i < objects.length; i++) {
     const object = new THREE.Object3D();
-    const rows = 3;
-    const cols = 6;
+    const rows = 2;
+    const cols = 3;
     const gapX = 130; //in pixels
-    const gapY = 130; //in pixels
+    const gapY = 100; //in pixels
     const gapZ = 520;
 
     //centering logic applied
@@ -363,7 +183,7 @@ function init() {
       100 -
       gridTop;
 
-    object.position.z = Math.floor(i / 18) * gapZ - 2000;
+    object.position.z = Math.floor(i / 6) * gapZ - 2000;
 
     targets.grid.push(object);
   }
@@ -426,18 +246,20 @@ function animate() {
 }
 
 var c = 0;
-
+var t = 0;
 var a = setInterval(function () {
   if (SPEAKERS == "start") {
-    transform(targets.grid, 3500);
+    transform(targets.grid, 1000);
   var b = setInterval(function () {
+    t += 2000;
+    console.log(t);
     var n = Math.floor(Math.random() * 54);
     // var n = c % objects.length;
-    var e = document.getElementsByClassName("element")[n];
-    e.className = e.className + " elementSeen";
-    setTimeout(function () {
-      e.className = e.className.split(" ")[0];
-    }, 3000);
+    // var e = document.getElementsByClassName("element")[n];
+    // e.className = e.className + " elementSeen";
+    // setTimeout(function () {
+    //   e.className = e.className.split(" ")[0];
+    // }, 3000);
 
     new TWEEN.Tween(camera.position)
       .to(
@@ -446,13 +268,13 @@ var a = setInterval(function () {
           y: targets.grid[n].position.y,
           z: targets.grid[n].position.z + 250,
         },
-        2000
+        1000
       )
       .easing(TWEEN.Easing.Exponential.Out)
       .onUpdate(render)
       .start();
-    c += 1;
-  }, 3000);
+    // c += 1;
+  }, 2000);
   console.log("bye");
   clearInterval(a);
 } else {console.log(SPEAKERS);}
