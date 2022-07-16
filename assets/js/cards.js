@@ -251,8 +251,6 @@ var a = setInterval(function () {
   if (SPEAKERS == "start") {
     transform(targets.grid, 1000);
   var b = setInterval(function () {
-    t += 2000;
-    console.log(t);
     var n = Math.floor(Math.random() * 54);
     // var n = c % objects.length;
     // var e = document.getElementsByClassName("element")[n];
