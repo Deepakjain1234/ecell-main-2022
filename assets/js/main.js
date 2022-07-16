@@ -13,12 +13,17 @@ gsap.to("#background", {
 
 var tl;
 var transition = { playing: true };
-function textEffect1(textId) {
+function textEffect1(textId,special) {
   var a = document.getElementById(textId).innerText;
   var b = a.split("");
   for (var l in b) {
-    b[l] =
-      "<div class='shadowInherit'>" + b[l].replace(" ", "&nbsp;") + "</div>";
+      if((l==0||l==17||l==18||l==19||l==20)&&special){
+          b[l] ="<div class='mobileHeading'>" + b[l].replace(" ", "&nbsp;") + "</div>";
+      } else if(special) {
+        b[l] ="<div class='onlyExpand'>" + b[l].replace(" ", "&nbsp;") + "</div>";
+      } else {
+        b[l] ="<div>" + b[l].replace(" ", "&nbsp;") + "</div>";
+      }
   }
   document.getElementById(textId).innerHTML = "<div>" + b.join("") + "</div>";
 
@@ -42,8 +47,8 @@ function textEffect1(textId) {
   }
 }
 
-textEffect1("heading");
-textEffect1("subHeading");
+textEffect1("heading",true);
+textEffect1("subHeading",false);
 // linear-gradient(147deg, rgb(0, 0, 0) 0%, #15062b 80%), url(./assets/images/noise.svg)
 var noise = "./assets/images/noise.svg";
 let tl2 = gsap.timeline({

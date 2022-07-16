@@ -704,13 +704,32 @@ canvas {
         opacity: 0.5;
         background-color: rgba(0, 127, 127, 0.655);
       }
+
+.makeThings{
+    display: inline;
+}
+
+.makeThings:nth-child(2){
+    margin-left: -73px;
+}
+
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     body {
         overflow: scroll !important;
     }
+    .onlyExpand{
+        display:none !important;
+    }
 
     .frontText {
         margin: 10px 0px;
+    }
+    #heading-container{
+        text-transform: uppercase;
+    }
+
+    .makeThings:nth-child(2){
+        margin-left: unset;
     }
 
     #first {
@@ -719,20 +738,34 @@ canvas {
 
     #tagline1 {
         letter-spacing: 16px;
-        margin-left: 15px;
+        margin-left: 8px;
+        text-align:center;
+        font-size:5em;
+    }
+
+    .makeThings{
+        display:block;
     }
 
     #tagline2 {
-        letter-spacing: 45px;
-        margin-left: 44px;
+        letter-spacing: 13px;
+        margin-left: 15px;
+        font-size:5em;
     }
 
     #heading {
         text-shadow: none !important;
+        font-size:7.9em;
+    }
+
+
+    .mobileHeading{
+        display:inline-block !important;
     }
 
     #subHeading {
         text-shadow: none !important;
+        font-size:4em;
     }
 
     .frontText div {
@@ -842,9 +875,10 @@ canvas {
         justify-content: center;
         flex-wrap: wrap;
         align-items: center;
-        left: 10%;
-        bottom: 145px;
-        font-size: 1.4em;
+        left:unset;
+        width: 100%;    
+        bottom: 94px;
+        font-size: 1.32em;
     }
 
     .social-mobile:nth-child(1):after {
@@ -869,6 +903,12 @@ canvas {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .mobileHeading:nth-child(2){
+        font-size:10em;
+        text-content:"-";
+    }
+
 /* subcontainer bg radial-gradient(circle at left,rgba(244,61,0,0.3) 0vw,rgba(255,255,255,0) 19vw)!important */
     #first {
         overflow: scroll !important;
