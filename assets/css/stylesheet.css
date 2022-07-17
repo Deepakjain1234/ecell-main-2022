@@ -268,7 +268,6 @@ canvas {
     filter: contrast(1.5);
     margin-left: 34px;
     font-size: 4em;
-    margin-top: -100px;
     /* top: 26%; */
     /* left: 22.5%; */
     background: linear-gradient(to right,
@@ -341,7 +340,7 @@ canvas {
     align-items: center !important;
     flex: 0 0 auto;
     /*cool*/
-    width: 27.666667%;
+    width: 27.666667% !important;
     /*89.666667% for mobile device, 27.666667% for pc*/
 }
 
@@ -738,6 +737,7 @@ canvas {
     }
 
     #tagline1 {
+        margin-top: -100px;
         letter-spacing: 16px;
         margin-left: 8px;
         text-align:center;

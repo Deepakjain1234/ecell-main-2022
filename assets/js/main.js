@@ -120,13 +120,6 @@ let tl3 = gsap.timeline({
   paused: true,
 });
 // linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(2 54 56) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)
-tl3
-  .to("#background", {
-    "background":
-      "#00204f4f",
-    duration: 3,
-  });
-
 
   let tl4= gsap.timeline({
     defaults: {
