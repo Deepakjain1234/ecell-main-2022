@@ -22,6 +22,16 @@ body {
     position:fixed !important;
 }
 
+.sponsorItem{
+    width: 208px;
+    height: 149px;
+    background: #b9b5b533;
+    border-radius: 5px;
+    margin: 16px;
+    border: solid 1px #b9b5b570;
+}
+
+
 #speakers{
     /* opacity:0; */
 }
@@ -344,6 +354,7 @@ canvas {
     /*89.666667% for mobile device, 27.666667% for pc*/
 }
 
+
 .arrow>a {
     position: absolute;
     z-index: 2;
@@ -383,6 +394,19 @@ canvas {
     margin-right: auto;
 }
 
+#sponsorIcons{
+    display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 190px;
+        box-sizing: border-box;
+}
+
 #about-head {
     clip-path: polygon(0 100%, 0% 100%, 100% 100%);
     opacity: 0;
@@ -403,6 +427,22 @@ canvas {
     background-clip: text;
     -webkit-background-clip: text;
     margin-top: 4em !important;
+}
+
+#sponsor-head {
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.6em;
+    letter-spacing: 9px;
+    margin-bottom: 0.5em;
+    background-image: linear-gradient(51deg, rgb(211, 18, 151), rgb(81, 145, 213)), url(./assets/images/noise.svg);
+    color: transparent;
+    width: 242px;
+    margin-left: auto;
+    margin-right: auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-top: 3em !important;
 }
 
 #about-child-one {
@@ -639,8 +679,9 @@ canvas {
       .element {
         width: 120px;
         height: 160px;
-        box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.5);
-        border: 1px solid rgba(127, 255, 255, 0.25);
+        /* box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.5); */
+        border: solid 1px #b9b5b570;
+        border-radius: 2px;
         font-family: Helvetica, sans-serif;
         text-align: center;
         line-height: normal;
@@ -678,7 +719,7 @@ canvas {
         font-size: 15px;
         font-weight: bold;
         color: rgba(255, 255, 255, 0.75);
-        text-shadow: 0 0 10px rgba(0, 255, 255, 0.95);
+        /* text-shadow: 0 0 10px rgba(0, 255, 255, 0.95); */
       }
 
       .element .details {
@@ -687,7 +728,7 @@ canvas {
         left: 0px;
         right: 0px;
         font-size: 12px;
-        color: rgba(127, 255, 255, 0.75);
+        color: rgb(255 255 255 / 75%);
       }
 
       .overlay {
@@ -702,7 +743,7 @@ canvas {
         border: 1px solid rgba(127, 255, 255, 0.25);
         background-blend-mode: multiply;
         opacity: 0.5;
-        background-color: rgba(0, 127, 127, 0.655);
+        background-color: rgba(181,185,185,0.2);
       }
 
 .makeThings{
@@ -713,12 +754,19 @@ canvas {
     margin-left: -73px;
 }
 
+
+
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     body {
         overflow: scroll !important;
     }
     .onlyExpand{
         display:none !important;
+    }
+
+    .sponsorItem{
+        width: 146px;
+    height: 111px;
     }
 
     .frontText {
@@ -903,6 +951,11 @@ canvas {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+
+    #sponsorIcons{
+        padding:unset;
     }
 
     .mobileHeading:nth-child(2){

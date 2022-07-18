@@ -126,14 +126,16 @@ function init() {
 
   for (let i = 0; i < table.length; i += 5) {
     const element = document.createElement("div");
-    var bgc = "rgba(0,127,127," + (Math.random() * 0.5 + 0.25) + ")";
+    var bgc = "rgba(185,181,181," + (Math.random() * 0.5 + 0.25) + ")";
+    // 0,127,127
+    // rgba(185, 181, 181, 0.2)
     element.className = "element";
     element.style.backgroundColor = bgc;
 
     const cardPic = document.createElement("div");
     cardPic.className = "cardPic";
     cardPic.style.background =
-      "url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Mark_Zuckerberg_em_setembro_de_2014.jpg')";
+      "url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Mark__Zuckerberg_em_setembro_de_2014.jpg')";
     element.appendChild(cardPic);
 
     const overlay = document.createElement("div");
@@ -264,7 +266,7 @@ var a = setInterval(function () {
         {
           x: targets.grid[n].position.x,
           y: targets.grid[n].position.y,
-          z: targets.grid[n].position.z + 250,
+          z: targets.grid[n].position.z + 480,
         },
         1000
       )
