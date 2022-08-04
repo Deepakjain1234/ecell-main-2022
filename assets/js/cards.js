@@ -257,9 +257,9 @@ var a = setInterval(function () {
     // var n = c % objects.length;
     // var e = document.getElementsByClassName("element")[n];
     // e.className = e.className + " elementSeen";
-    // setTimeout(function () {
-    //   e.className = e.className.split(" ")[0];
-    // }, 3000);
+    setTimeout(function () {
+      e.className = e.className.split(" ")[0];
+    }, 3000);
 
     new TWEEN.Tween(camera.position)
       .to(
