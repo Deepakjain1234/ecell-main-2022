@@ -139,7 +139,8 @@ tl3
       "opacity":
         "1",
       duration: 5,
-    }, "<");
+    }, "<")
+;
   
     // linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(1 36 138) 70%), url(./assets/images/noise.svg)
 // linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(2 54 56) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)

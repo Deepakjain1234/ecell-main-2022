@@ -415,7 +415,7 @@
           if (i + 1 == 3) {
             tl3.progress(0).play();
             SPEAKERS = "start";
-            fixSpeakers.position = "fixed";
+            setTimeout(function(){fixSpeakers.position = "fixed";},500);
             console.log("entered 3 from top");
           }
           if (i + 1 == 4) {
@@ -457,7 +457,7 @@
             // tl3.restart();
             tl4.reverse();
             // tl3.play();
-            fixSpeakers.position = "fixed";
+            setTimeout(function(){fixSpeakers.position = "fixed";},500);
             console.log("entered 3 from bottom");
           }
 
