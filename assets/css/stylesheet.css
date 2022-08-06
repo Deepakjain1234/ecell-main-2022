@@ -115,7 +115,10 @@ body {
     border-radius: 5px;
     margin: 16px;
     border: solid 1px #b9b5b570;
-}#background
+}
+a{
+    text-decorations:none; color:inherit;
+}
 
 
 #speakers{
