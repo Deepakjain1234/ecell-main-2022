@@ -8,80 +8,80 @@ import { CSS3DRenderer, CSS3DObject } from "./jsm/renderers/CSS3DRenderer.js";
 //   /IMPORTING
 
 const table = [
-  "speaker1",
-  "Organization1",
-  "Position1",
+  "Abhishek Upmanyu",
+  "Standup  Comedian",
+  "&nbsp;",
+  "../assets/images/spk/Abhishek Upmanyu.png",
   1,
+  "Abhilash Misra",
+  "CEO, NSE  Academy",
+  "Jury and eminent  Advisor at  Penn GSE",
+  "../assets/images/spk/Abhilash Misra.png",
   1,
-  "speaker2",
-  "Organization1",
-  "Position1",
+  "Anurag Dobhal",
+  "The UK07 Rider, 2.57M subscribers",
+  "&nbsp;",
+  "../assets/images/spk/Anurag Dobhal.png",
   1,
+  "Greg S. Reid",
+  "Forbes Top 5 Keynote Speakers",
+  "&nbsp;",
+  "../assets/images/spk/Greg S. Reid.png",
   1,
-  "speaker3",
-  "Organization1",
-  "Position1",
+  "Jason Falls",
+  "Author, Top Influencer",
+  "Entrepreneur, Forbes",
+  "../assets/images/spk/Jason Falls.png",
   1,
+  "Major General G.D. Bakshi",
+  "SM, VSM",
+  "&nbsp;",
+  "../assets/images/spk/Major General G.D. Bakshi.png",
   1,
-  "speaker4",
-  "Organization1",
-  "Position1",
+  "Matteo Rizzi",
+  "Co-Founder of FTS Group",
+  "Host of #1 Radio Show",
+  "../assets/images/spk/Matteo Rizzi.png",
   1,
+  "Naman Deshmukh",
+  "Silver Play Button YouTube Creator",
+  "&nbsp;",
+  "../assets/images/spk/Naman Deshmukh.png",
   1,
-  "speaker5",
-  "Organization1",
-  "Position1",
+  "Prerna & Harsh",
+  "YouTuber with 7M+ Subscribers",
+  "&nbsp;",
+  "../assets/images/spk/Prerna _ Harsh.png",
   1,
+  "Raoul Pal",
+  "Founder of RealVision",
+  "Former Head at Goldman Sachs",
+  "../assets/images/spk/Raoul Pal.png",
   1,
-  "speaker6",
-  "Organization1",
-  "Position1",
+  "Ryan Foland",
+  "Founder of Expert Dojo",
+  "4-times TEDx Speaker",
+  "../assets/images/spk/Ryan Foland.png",
   1,
+  "Shagun Malhotra",
+  "235k+ Instagram Followers",
+  "&nbsp;",
+  "../assets/images/spk/Shagun Malhotra.png",
   1,
-  "speaker7",
-  "Organization1",
-  "Position1",
+  "Shakti Singh Shekhawat",
+  "91K+ Instagram followers",
+  "&nbsp;",
+  "../assets/images/spk/Shakti Singh Shekhawat.png",
   1,
+  "Shivraj Singh Chouhan",
+  "Hon’ Chief Minister",
+  "of Madhya Pradesh",
+  "../assets/images/spk/Shivraj Singh Chouhan.png",
   1,
-  "speaker8",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker9",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker10",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker11",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker12",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker13",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker14",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker15",
-  "Organization1",
-  "Position1",
-  1,
+  "Zev Siegl",
+  "Co-Founder",
+  "Starbucks",
+  "../assets/images/spk/Zev Siegl.png",
   1,
   "speaker16",
   "Organization1",
@@ -130,17 +130,18 @@ function init() {
     // 0,127,127
     // rgba(185, 181, 181, 0.2)
     element.className = "element";
-    element.style.backgroundColor = bgc;
+    // element.style.backgroundColor = bgc;
 
     const cardPic = document.createElement("div");
     cardPic.className = "cardPic";
+    element.style.transform = "rotateZ(0)";
     cardPic.style.background =
-      "url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Mark__Zuckerberg_em_setembro_de_2014.jpg')";
+      "url('"+table[i+3]+"')";
     element.appendChild(cardPic);
 
-    const overlay = document.createElement("div");
-    overlay.className = "overlay";
-    element.appendChild(overlay);
+    // const overlay = document.createElement("div");
+    // overlay.className = "overlay";
+    // element.appendChild(overlay);
 
     const cardName = document.createElement("div");
     cardName.className = "cardName";
@@ -185,7 +186,8 @@ function init() {
       100 -
       gridTop;
 
-    object.position.z = Math.floor(i / 6) * gapZ - 2000;
+    object.position.z = Math.floor(i / 6) * gapZ - 1700;
+
 
     targets.grid.push(object);
   }
@@ -266,7 +268,7 @@ var a = setInterval(function () {
         {
           x: targets.grid[n].position.x,
           y: targets.grid[n].position.y,
-          z: targets.grid[n].position.z + 480,
+          z: targets.grid[n].position.z + 200,
         },
         1000
       )

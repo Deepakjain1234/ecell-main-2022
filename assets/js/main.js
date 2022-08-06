@@ -119,6 +119,29 @@ let tl3 = gsap.timeline({
   },
   paused: true,
 });
+tl3
+.to("#background", {
+  "background":
+    "linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(1 36 138) 70%)",
+  duration: 5,
+})
+.to("#tsparticles canvas", {
+  "y":
+    "-100vh",
+  duration: 1.2,
+}, "<")
+    .to("#background", {
+      "opacity":
+        "0",
+      duration: 5,
+    }, "<")
+    .to("#background-mesh", {
+      "opacity":
+        "1",
+      duration: 5,
+    }, "<");
+  
+    // linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(1 36 138) 70%), url(./assets/images/noise.svg)
 // linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(2 54 56) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)
 
   let tl4= gsap.timeline({
@@ -129,12 +152,25 @@ let tl3 = gsap.timeline({
   });
   // linear-gradient(147deg, rgb(0, 0, 0) 0%, rgb(2 54 56) 74%), url(./assets/images/noise.svg) rgb(0, 0, 0)
   tl4
-    .to("#background_", {
-      "background":
-        "#00204f4f",
-      duration: 3,
-    });
-  
+  // .to("#fourth", {
+  //   "background-image":
+  //     "linear-gradient(315deg, #0cbaba 0%, #380036 74%)",
+  //   duration: 2,
+  // }, "<")
+    .from(".sponsorItem", {
+      "y":
+        "30px",
+      duration: 4,
+    }, "<")
+    .from(".sponsorItem", {
+      "opacity":
+        "0",
+      duration: 4,
+    }, "<")
+    ;
+    
+    
+    // background: url(media/images/3661906.jpg);
 
 tl2.timeScale(2);
 tl3.timeScale(2);
