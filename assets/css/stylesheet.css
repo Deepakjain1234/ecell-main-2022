@@ -884,7 +884,14 @@ canvas {
     .onlyExpand{
         display:none !important;
     }
-
+    .cardName{
+        font-size:6px !important;
+    }
+    .details{
+        bottom: 37px !important;
+        font-size: 3px !important;
+        word-break: break-all !important;
+     }
     .sponsorItem{
         width: 146px;
     height: 111px;
