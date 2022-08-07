@@ -33,7 +33,7 @@ const table = [
   "Entrepreneur, Forbes",
   "../assets/images/spk/Jason Falls.png",
   1,
-  "Major General G.D. Bakshi",
+  "Maj General G.D. Bakshi",
   "SM, VSM",
   "&nbsp;",
   "../assets/images/spk/Major General G.D. Bakshi.png",
