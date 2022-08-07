@@ -115,11 +115,19 @@ body {
     border-radius: 5px;
     margin: 16px;
     border: solid 1px #b9b5b570;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 a{
     text-decorations:none; color:inherit;
 }
 
+.sponsorItem img{
+    width: 115px;
+    height: auto;
+}
 
 #speakers{
     /* opacity:0; */
@@ -352,9 +360,10 @@ canvas {
 }
 
 #fourth {
-    height: 130vh !important;
+    /* height: 130vh !important; */
     /* background-color:#d31297; */
     /* overflow: hidden !important; */
+    margin-bottom: 150px;
 }
 
 
