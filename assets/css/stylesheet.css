@@ -124,6 +124,10 @@ a{
     text-decorations:none; color:inherit;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 .sponsorItem img{
     width: 115px;
     height: auto;
@@ -131,6 +135,8 @@ a{
 
 #speakers{
     /* opacity:0; */
+    padding-top:73px;
+    box-sizing: border-box;
 }
 
 #background{
