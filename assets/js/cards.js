@@ -166,7 +166,7 @@ function init() {
 
   for (let i = 0; i < objects.length; i++) {
     const object = new THREE.Object3D();
-    const rows = 2;
+    const rows = 3;
     const cols = 3;
     const gapX = 130; //in pixels
     const gapY = 100; //in pixels
@@ -186,7 +186,7 @@ function init() {
       100 -
       gridTop;
 
-    object.position.z = Math.floor(i / 6) * gapZ - 1700;
+    object.position.z = Math.floor(i / (rows * cols)) * gapZ - 1700;
 
 
     targets.grid.push(object);

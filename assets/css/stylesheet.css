@@ -892,6 +892,19 @@ canvas {
         font-size: 3px !important;
         word-break: break-all !important;
      }
+
+    #lst{
+        height: auto !important;
+    } 
+    .box{
+        width:100%;
+        border: none;
+        padding-left:0px !important;
+    }
+    #conDet{
+        width:100% !important;
+        margin-bottom: 70px;
+    }
     .sponsorItem{
         width: 146px;
     height: 111px;
