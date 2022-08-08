@@ -821,7 +821,7 @@ canvas {
         position: absolute;
         width: 90px;
         height: 80px;
-        top: 16px;
+        top: 11px;
         font-size: 12px;
         background-size: cover !important;
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
@@ -833,7 +833,7 @@ canvas {
       .element .cardName {
         font-family: 'Open Sans', sans-serif;
         position: absolute;
-        bottom: 45px;
+        bottom: 53px;
         left: 0px;
         right: 0px;
         font-size: 12px;
@@ -846,7 +846,7 @@ canvas {
       .element .details {
         font-family: 'Noto Sans', sans-serif;
         position: absolute;
-        bottom: 30px;
+        bottom: 34px;
         left: 0px;
         right: 0px;
         font-size: 6px;
