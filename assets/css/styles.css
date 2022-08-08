@@ -11,9 +11,9 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 10vh;
+    min-height: 15vh;
     font-family: 'Open Sans', sans-serif;
-    backdrop-filter: blur(2px);
+    /* backdrop-filter: blur(2px); */
     /* background-color: #313030ab; */
 }
 .logo{

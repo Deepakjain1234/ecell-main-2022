@@ -67,44 +67,30 @@
         The Nav
 
       </div> -->
-    <ul class="nav-items nav-active" style="margin: 0; text-transform: uppercase; padding: 0px 54px 0px 0px">
-      <li class="nav-link" style="
-            animation: 0.5s ease 0.5s 1 normal forwards running navLinkFade;
-          ">
-        <a href="#second">about us</a>
+    <ul class="nav-items" style="margin: 0; text-transform: uppercase; padding: 0px 54px 0px 0px">
+      <li class="nav-link">
+        <a onclick="navScroll('second')">about us</a>
       </li>
-      <li class="nav-link" style="
-            animation: 0.5s ease 0.5s 1 normal forwards running navLinkFade;
-          ">
+      <li class="nav-link">
         <a href="esummit/">E-Summit</a>
       </li>
-      <li class="nav-link" style="
-            animation: 0.5s ease 0.5s 1 normal forwards running navLinkFade;
-          ">
-        <a href="#fourth">sponsors</a>
+      <li class="nav-link">
+        <a onclick="navScroll('fourth')">sponsors</a>
       </li>
-      <li class="nav-link" style="
-            animation: 0.5s ease 0.5s 1 normal forwards running navLinkFade;
-          ">
-        <a href="#third">speakers</a>
+      <li class="nav-link">
+        <a onclick="navScroll('third')">speakers</a>
       </li>
-      <li class="nav-link" style="
-            animation: 0.5s ease 0.5s 1 normal forwards running navLinkFade;
-          ">
+      <li class="nav-link">
         <a href="events/">past events</a>
       </li>
-      <li class="nav-link" style="
-            animation: 0.5s ease 0.5s 1 normal forwards running navLinkFade;
-          ">
+      <li class="nav-link">
         <a href="teams/">our team</a>
       </li>
-      <li class="nav-link" style="
-            animation: 0.5s ease 0.5s 1 normal forwards running navLinkFade;
-          ">
+      <li class="nav-link">
         <a href="faq/">faqs</a>
       </li>
     </ul>
-    <div class="burger toggle">
+    <div class="burger">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
@@ -148,6 +134,7 @@
 
     <!-- welcome page -->
     <div class="sub-container scroll-box" id="first">
+      <img src="logo.png" alt="" id="logo">
       <!-- welcome text -->
       <div id="d-flex">
         <div class="back-filter">
@@ -414,9 +401,39 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
 
 <script>
+  ScrollTrigger.clearScrollMemory();
+  window.history.scrollRestoration = "manual";
+
+  var map = ["first", "second", "third", "fourth", "fifth"]
+  var current = 1;
+  function navScroll(targetId) {
+    var takeTo = map.indexOf(targetId) + 1;
+    var takeFrom = current;
+    if (takeTo > takeFrom) {
+      //slideDown
+      for (i = takeFrom + 1; i <= takeTo; i++) {
+        scrollBy(0, window.innerHeight);
+      }
+    } else if (takeTo < takeFrom) {
+      //slideUp
+      if (current == 5) {
+        scrollBy(0, -window.innerHeight);
+      }
+      for (i = takeFrom - 1; i >= takeTo; i--) {
+        scrollBy(0, -window.innerHeight);
+      }
+    }
+  }
+
 
   document.addEventListener("DOMContentLoaded", function () {
-    var fixSpeakers = document.getElementById("speakers").style;
+    setTimeout(() => {
+      if (Boolean(document.location.search.split("=")[1])) {
+        navScroll(document.location.search.split("=")[1]);
+      }
+    }, 1000)
+
+    // var fixSpeakers = document.getElementById("speakers").style;
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
@@ -425,47 +442,53 @@
       ScrollTrigger.create({
         trigger: elem,
         onEnter: function ({ progress, direction, isActive }) {
-          console.log(
-            progress,
-            direction,
-            isActive,
-            elem,
-            " entered from top"
-          );
+          // console.log(
+          //   progress,
+          //   direction,
+          //   isActive,
+          //   elem,
+          //   " entered from top"
+          // );
           gsap.to(window, {
             duration: 0.3,
             scrollTo: "#" + elem.id,
             ease: Linear.easeNone,
           });
+
           if (i + 1 == 2) {
             // fixSpeakers.position = "static";
             gsap.to("#d-flex", {
               opacity: 0,
               duration: 2,
             })
+            current = 2;
             tl2.progress(0).play();
           }
           if (i + 1 == 3) {
+            current = 3;
             tl3.progress(0).play();
             SPEAKERS = "start";
             // setTimeout(function () { fixSpeakers.position = "fixed"; }, 500);
-            console.log("entered 3 from top");
+            // console.log("entered 3 from top");
           }
           if (i + 1 == 4) {
             // fixSpeakers.position = "static";
+            current = 4;
             tl4.progress(0).play();
-            console.log("entered 4 from top");
-
+            // console.log("entered 4 from top");
+          }
+          if (i + 1 == 5) {
+            current = 5;
           }
         },
         onEnterBack: function ({ progress, direction, isActive }) {
-          console.log(
-            progress,
-            direction,
-            isActive,
-            elem,
-            " entered from bottom"
-          );
+          // console.log(
+          //   progress,
+          //   direction,
+          //   isActive,
+          //   elem,
+          //   " entered from bottom"
+          // );
           gsap.to(window, {
             duration: 0.3,
             scrollTo: "#" + elem.id,
@@ -473,6 +496,7 @@
           });
           if (i + 1 == 1) {
             // fixSpeakers.position = "static";
+            current = 1;
             tl2.progress(1).reverse();
             gsap.to("#d-flex", {
               opacity: 1,
@@ -481,26 +505,28 @@
           }
           if (i + 1 == 2) {
             // fixSpeakers.position = "static";
+
             tl2.restart();
             tl3.reverse();
-            tl2.progress(0).play();
-            console.log("entered 2 from bottom");
+            tl2.progress(0).play(); current = 2;
+            // console.log("entered 2 from bottom");
           }
           if (i + 1 == 3) {
             // tl3.restart();
-            tl4.reverse();
+
+            tl4.reverse(); current = 3;
             // tl3.play();
             // setTimeout(function () { fixSpeakers.position = "fixed"; }, 500);
-            console.log("entered 3 from bottom");
+            // console.log("entered 3 from bottom");
           }
 
           if (i + 1 == 4) {
             // fixSpeakers.position = "static";
-            tl4.restart();
-            tl4.play();
-            console.log("entered 4 from bottom");
-          }
 
+            tl4.restart();
+            tl4.play(); current = 4;
+            // console.log("entered 4 from bottom");
+          }
         },
         onLeave: function () {
 

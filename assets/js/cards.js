@@ -100,7 +100,7 @@ const table = [
   1,
 ];
 
-console.log(table.length / 5);
+// console.log(table.length / 5);
 let camera, scene, renderer;
 //   let controls;
 
@@ -168,8 +168,8 @@ function init() {
     const object = new THREE.Object3D();
     const rows = 3;
     const cols = 3;
-    const gapX = 130; //in pixels
-    const gapY = 100; //in pixels
+    const gapX = 90; //in pixels
+    const gapY = 10; //in pixels
     const gapZ = 520;
 
     //centering logic applied
@@ -186,7 +186,7 @@ function init() {
       100 -
       gridTop;
 
-    object.position.z = Math.floor(i / (rows * cols)) * gapZ - 1700;
+    object.position.z = Math.floor(i / (rows * cols)) * gapZ - 1200;
 
 
     targets.grid.push(object);
@@ -249,19 +249,17 @@ function animate() {
   TWEEN.update(); //calling tween.update recursively for smoother tweening
 }
 
-var c = 0;
-var t = 0;
 var a = setInterval(function () {
   if (SPEAKERS == "start") {
     transform(targets.grid, 1000);
   var b = setInterval(function () {
-    var n = Math.floor(Math.random() * 54);
+    var n = Math.floor(Math.random() * 18);
     // var n = c % objects.length;
     // var e = document.getElementsByClassName("element")[n];
     // e.className = e.className + " elementSeen";
-    setTimeout(function () {
-      e.className = e.className.split(" ")[0];
-    }, 3000);
+    // setTimeout(function () {
+    //   e.className = e.className.split(" ")[0];
+    // }, 3000);
 
     new TWEEN.Tween(camera.position)
       .to(
@@ -275,11 +273,11 @@ var a = setInterval(function () {
       .easing(TWEEN.Easing.Exponential.Out)
       .onUpdate(render)
       .start();
-    // c += 1;
+    
   }, 2000);
   console.log("bye");
   clearInterval(a);
-} else {console.log(SPEAKERS);}
+}
 }, 100);
 
 function render() {

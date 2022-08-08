@@ -111,7 +111,8 @@ body {
     position:relative;
     width: 208px;
     height: 149px;
-    background: #b9b5b533;
+    /* background: #b9b5b533; */
+    background-color: #b9b5b554;
     border-radius: 5px;
     margin: 16px;
     border: solid 1px #b9b5b570;
@@ -131,6 +132,7 @@ a:hover{
 .sponsorItem img{
     width: 115px;
     height: auto;
+    filter: contrast(2.5) ;
 }
 
 #speakers{
@@ -836,7 +838,7 @@ canvas {
         right: 0px;
         font-size: 12px;
         font-weight: bold;
-        color: rgba(255, 255, 255, 0.75);
+        color: rgba(255, 255, 255, 1);
         text-shadow: 0 0.9PX #0033dc;
         /* text-shadow: 0 0 10px rgba(0, 255, 255, 0.95); */
       }
@@ -848,7 +850,7 @@ canvas {
         left: 0px;
         right: 0px;
         font-size: 6px;
-        color: rgb(255 255 255 / 75%);
+        color: rgb(255 255 255 / 100%);
         text-shadow: 0 0.5PX #0033dc;
       }
 
@@ -874,12 +876,29 @@ canvas {
 .makeThings:nth-child(2){
     margin-left: -73px;
 }
-
+a{
+    cursor:pointer;
+}
+#logo{
+    width: 6em;
+    position: absolute;
+    display: block;
+    filter: contrast(1.1);
+    border-radius: 50%;
+    box-shadow: 0 0 13px 1px #191106, 0 0 8px 2px #bbb56745;
+    margin-left: 3em;
+    margin-top: 1em;
+}
 
 
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     body {
         overflow: scroll !important;
+    }
+    #logo{
+        width: 12em !important;
+    margin-left: 16em !important;
+    margin-top: 3em !important;
     }
     .onlyExpand{
         display:none !important;
@@ -908,6 +927,7 @@ canvas {
     .sponsorItem{
         width: 146px;
     height: 111px;
+    
     }
 
     .frontText {
@@ -971,7 +991,7 @@ canvas {
     }
 
     .arrow {
-        width: 89.666667%;
+        width: 89.666667% !important;
     }
 
     #second {
@@ -1067,8 +1087,8 @@ canvas {
         align-items: center;
         left:unset;
         width: 100%;    
-        bottom: 100px;
-        font-size: 1.32em;
+        bottom: 161px;
+        font-size: 1em;
     }
 
     .social-mobile:nth-child(1):after {
