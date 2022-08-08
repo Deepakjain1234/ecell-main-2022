@@ -82,22 +82,7 @@ const table = [
   "Co-Founder",
   "Starbucks",
   "../assets/images/spk/Zev Siegl.png",
-  1,
-  "speaker16",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker17",
-  "Organization1",
-  "Position1",
-  1,
-  1,
-  "speaker18",
-  "Organization1",
-  "Position1",
-  1,
-  1,
+  1
 ];
 
 // console.log(table.length / 5);
@@ -253,7 +238,7 @@ var a = setInterval(function () {
   if (SPEAKERS == "start") {
     transform(targets.grid, 1000);
   var b = setInterval(function () {
-    var n = Math.floor(Math.random() * 18);
+    var n = Math.floor(Math.random() * 15);
     // var n = c % objects.length;
     // var e = document.getElementsByClassName("element")[n];
     // e.className = e.className + " elementSeen";
