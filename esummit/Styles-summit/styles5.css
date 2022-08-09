@@ -43,6 +43,9 @@ top: 0px;
 .nav-link:hover{
   color:  #76BA99;
 }
+a:hover{
+  color:#76BA99;
+}
 .burger{
   display: none;
   cursor:pointer;
