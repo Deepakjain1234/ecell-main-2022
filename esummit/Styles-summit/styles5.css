@@ -4,38 +4,47 @@
   box-sizing: border-box;
 } */
 nav{
-  position: fixed;
-    z-index: 1000;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 15vh;
-    font-family: 'Open Sans', sans-serif;
-    /* backdrop-filter: blur(2px); */
-    /* background-color: #313030ab; */
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  min-height: 8vh;
+font-family: 'Open Sans', sans-serif;
+
+padding-top: 10px;
+background-color:#2C3639;
+position: fixed;
+z-index: 1;
+right: 0px;
+left: 0px;
+top: 0px;
 }
-.logo{
+/* #logo{
   color: rgb(226,226,226);
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   font-size: 22px;
-}
+} */
 .nav-items{
+  position:fixed;
+  z-index: 3;
   display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  font-family:Rajdhani,gotham;
-  font-size:.9rem!important;
+  justify-content: space-between;
+  width: 85%;
+  text-transform: uppercase;
+
 }
 .nav-link{
   text-decoration: none;
   letter-spacing: 3px;
-  color: rgb(226,226,226);
+  color: #fff;
   font-size: 15px;
-  list-style: none;
-  margin-left: 54px;
+   list-style: none;
+}
+.nav-link:hover{
+  color:  #76BA99;
+}
+a:hover{
+  color:#76BA99;
 }
 .burger{
   display: none;
@@ -48,51 +57,43 @@ nav{
   margin: 5px;
 }
 @media screen and (max-width:1300px){
+  
   .nav-items{
-    width: 100%;
+    width: 85%;
   }
 }
 
 @media screen and (max-width:1050px){
-  nav{
+  body{
     overflow-x: hidden;
-    backdrop-filter: unset !important;
   }
-
-  .headShake{
-    margin-top: -10px;
+  nav{
+    background-color: transparent;
   }
-
   .nav-items{
-    position: fixed;
-    z-index: 1000;
+    padding: 25px 0;
+    position:fixed;
     right: 0px;
     height: 100vh;
-    top: 0;
-    background-color: #000000e3;
+    top: 0vh;
+    background-color: #313030ab;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width:100%;
     transform: translateX(100%);
-    justify-content: space-evenly;
     transition: transform 0.5s ease-in;
-    padding-right: 23px !important;
   }
   .nav-link{
     opacity: 0;
-    margin-left: 54px;
   }
-  #arrow{
-    width:33.666667% !important;
-  }
-
   .burger{
     display:block;
-    position: absolute;
+    position: fixed;
+    z-index: 4;
     right: 0px;
-    margin-right: 10px;
-    z-index: 1001;
+    margin-right: 10px;;
+
   }
 }
 .nav-active{
