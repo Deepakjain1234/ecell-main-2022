@@ -16,7 +16,7 @@ particlesJS('particles-js',
   {
     "particles": {
       "number": {
-        "value": 60,
+        "value":70,
         "density": {
           "enable": true,
           "value_area": 800
@@ -51,7 +51,7 @@ particlesJS('particles-js',
         }
       },
       "size": {
-        "value": 4,
+        "value": 5,
         "random": true,
         "anim": {
           "enable": false,
@@ -104,7 +104,7 @@ particlesJS('particles-js',
           }
         },
         "bubble": {
-          "distance": 400,
+          "distance":500,
           "size": 40,
           "duration": 2,
           "opacity": 8,

@@ -3,6 +3,20 @@ body {
     margin:0px;
     
 }
+.main{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    align-self: center;
+    margin:auto;
+}
+.secondary{
+    display:flex;
+    align-items: center;
+        justify-content: space-around;
+        align-self:center;
+        margin:auto;
+}
 .banner{
     background: linear-gradient(to bottom right, #0A0A00, #000000);
     display:flex;
@@ -27,9 +41,9 @@ section {
     font-family: 'Montserrat', sans-serif;
     color:#D8D7D5;
     display:block;
-    padding:0px;
+    padding:2px;
     text-align: center;
-    margin:0px;
+    margin:8px;
 }
 
 .head2 {
@@ -38,7 +52,8 @@ section {
     text-align: center;
     color: white;
     justify-content: center;
-    margin:1px;
+    margin-bottom:0px;
+
 }
 
 .events-img {
@@ -99,8 +114,8 @@ section {
     /*background-color:#16488F ;*/
     opacity: 80%;
     border-width:1px;
-    margin-bottom:0.3px;
-    margin-top:0.3px;
+    margin-bottom:0px;
+    margin-top:60px;
     justify-self: center;
     justify-content: center;
     align-self: center;
@@ -185,13 +200,20 @@ section {
     }
 }
 /* for tablets and mobiles */
-@media screen and (max-width:1024px) {
+@media screen and (max-width:768px) {
     .placeholder1 {
         width:85%;
         align-content: center;
         align-self: center;
-        margin:8%;
-        
+       margin-left:3%;
+       margin-right:3%;
+       margin-top:1%;
+    }
+    .main{
+     flex-direction: column;
+    }
+    .secondary{
+      flex-direction: column;
     }
 
     .placeholder2 {
@@ -199,13 +221,15 @@ section {
     }
 
     .events-img {
-        width: 94.5%;
+        width: 80%;
         height:200px;
+        margin-left:10%;
     }
     .head1{
         font-size:30px;
+        margin-bottom:10px;
     }
     .head2{
-        font-size:350%;
+        font-size:280%;
     }
 }
