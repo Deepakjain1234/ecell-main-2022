@@ -980,7 +980,7 @@ iframe{
   width: 187.65px !important;
   height: 57.06px !important;
   left: 0px !important;
-  top: 221.77px !important;
+  top:32.8vh !important;
   margin-bottom: 49.58px !important;
   font-size: 14.12px;
   background: #A7A7A7 !important;
@@ -992,7 +992,7 @@ iframe{
   font-family: Raleway !important;
   font-style: normal !important;
   font-weight: 500 !important;
-  font-size: 11px !important;
+  font-size:58% !important;
   line-height: 13px !important;
   letter-spacing: .07em !important;
   text-align: left !important;
@@ -1049,7 +1049,7 @@ iframe{
   /* width:100%!important;
   height:60%!important;*/
   /* filter: contrast(2.5);  */
-  transform: scale(0.5) !important;
+  transform: scale(0.45) !important;
 }
 
 .mob-img1 {
@@ -1057,7 +1057,7 @@ iframe{
   /* width:100%!important;
   height:60%!important;*/
   /* filter: contrast(2.5);  */
-  transform: scale(0.7) !important;
+  transform: scale(0.45) !important;
 }
 
 .mobp {
@@ -1080,10 +1080,10 @@ iframe{
 
 .mob-email {
   box-sizing: border-box !important;
-  width: 197.69px !important;
+  width: 160.69px !important;
   height: 18.53px !important;
-  font-size: 10px !important;
-  margin-left: 15% !important;
+  font-size: 9px !important;
+  /* margin-left: 15% !important; */
   /* padding-bottom:91px!important; */
 }
 
@@ -1101,10 +1101,11 @@ iframe{
   height: 21.2vh !important;
   /* margin-top:31px!important; */
   padding-top: 28px !important;
+  padding-bottom:100px!important;
 }
 
 .mob-request-sponsor-hd {
-  width: 170px;
+  /* width: 170px; */
   height: 20px;
 
   font-size: 17px !important;
@@ -1119,3 +1120,14 @@ iframe{
 }
 
 /*ayushi code ends here*/
+@media (min-width: 374px) and(max-width:425px) {
+  .mobevents {
+    height: 220vh !important;
+  }
+
+    .mobevents-img1 {
+    position: relative !important;
+    width: 39vw !important;
+    height: 58vh !important;
+  }
+}
