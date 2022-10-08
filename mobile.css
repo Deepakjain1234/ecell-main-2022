@@ -1009,7 +1009,7 @@ iframe{
   font-weight: 700;
   font-size: 25px !important;
   padding-top: 65px !important;
-  padding-left: 13.43% !important;
+  /* padding-left: 13.43% !important; */
   line-height: 53px;
   color: #ffffff;
   padding-top: 100px;
