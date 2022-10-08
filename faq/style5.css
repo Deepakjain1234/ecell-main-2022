@@ -34,7 +34,7 @@ section {
 #particles-js {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height:130vh;
   background: linear-gradient(to bottom right, #051537, #000000, #140005);
   z-index: -1;
 }
