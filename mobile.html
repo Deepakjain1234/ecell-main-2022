@@ -109,7 +109,7 @@
           <div class="sldBtn" onclick="
       var sclL = document.getElementsByClassName('flex-viewport')[0].scrollLeft;
       // console.log(sclL);
-      var bin = sclL - Math.trunc(document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width);
+      var bin = sclL - document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
       
       gsap.to('.flex-viewport', { scrollLeft: bin, duration: 1 });
     " style="
@@ -360,7 +360,7 @@
           </div>
           <div class="sldBtn" onclick="
       var sclL = document.getElementsByClassName('flex-viewport')[0].scrollLeft;
-      var bin = sclL + 375;
+      var bin = sclL + document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
       if(sclL <= 5400)
       gsap.to('.flex-viewport', { scrollLeft: bin, duration: 1 });
     " style="
@@ -717,7 +717,7 @@
         </script>
         <script>
   let gap = 0,
-    vel = Math.trunc(document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width);
+    vel = document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
   setInterval(function () {
     gsap.to(".flex-viewport", {
       scrollLeft: gap,
