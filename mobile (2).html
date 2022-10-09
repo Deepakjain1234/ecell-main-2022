@@ -19,9 +19,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <script>
-    if (window.innerWidth > 500) {
-      window.location.href = "index.html";
-    }
+    // if (window.innerWidth > 500) {
+    //   window.location.href = "index.html";
+    // }
   </script>
 </head>
 
@@ -39,11 +39,11 @@
     }
     );
   </script>
-  <div id="main-container">
+  <div id="main-container" style="width:100vw;">
     <div>
       <!-- navbar code -->
       <nav style="opacity: 1;">
-        <img id="logo" src="./logo.png">
+        <a href="https://www.ecellnitb.com"><img id="logo" src="./logo.png"></a>
 
         <ul class="nav nav-items" style="text-transform: uppercase;">
           <div id="hrSlide" style="width: 81px;left: 0px;"></div>
@@ -107,13 +107,19 @@
         <div class="container "
           style="display: flex;align-items: center;justify-content: space-evenly;transform: scale(1.1);">
           <div class="sldBtn" onclick="
+          
+          if(shouldScroll){
+            shouldScroll = false;
       var sclL = document.getElementsByClassName('flex-viewport')[0].scrollLeft;
       // console.log(sclL);
       var bin = sclL - document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
       
-      gsap.to('.flex-viewport', { scrollLeft: bin, duration: 1 });
+      gsap.to('.flex-viewport', { scrollLeft: bin, duration: 0.2 });
+      setTimeout(function sldfcn(){shouldScroll = true}, 1000);
+          }
     " style="
-    top: 46px;
+    top: 75px;
+    z-index: 2322;
 ">
             <i class="icon-angle-left gdlr-flex-prev"></i>
           </div>
@@ -359,13 +365,19 @@
             </div>
           </div>
           <div class="sldBtn" onclick="
+          
+          if(shouldScroll){
+            shouldScroll = false;
       var sclL = document.getElementsByClassName('flex-viewport')[0].scrollLeft;
       var bin = sclL + document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
       if(sclL <= 5400)
-      gsap.to('.flex-viewport', { scrollLeft: bin, duration: 1 });
+      gsap.to('.flex-viewport', { scrollLeft: bin, duration: 0.2 });
+      setTimeout(function feiro(){shouldScroll = true}, 1000);
+          }
     " style="
-    top: 46px;
+    top: 75px;
     right:0px;
+    z-index: 2000;
 ">
             <i class="icon-angle-right gdlr-flex-next"></i>
           </div>
@@ -379,7 +391,7 @@
 
           body {
             line-height: 1.7;
-
+            width: 100vw;
           }
 
           .container {
@@ -716,18 +728,23 @@
     // navbar shrink script ends here
         </script>
         <script>
+          let shouldScroll = true;
   let gap = 0,
     vel = document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
   setInterval(function () {
+    if(shouldScroll){
+    gap = document.getElementsByClassName("flex-viewport")[0].scrollLeft;
+    gap += vel;
     gsap.to(".flex-viewport", {
       scrollLeft: gap,
-      duration: 0.5,
+      duration: 0.2,
       ease: Power4.easeOut,
     });
-    gap += vel;
+    
     if (gap >= 5400 || gap <= 0) {
       vel = -vel;
     }
+  }
   }, 4500);
         </script>
       </div>
@@ -816,96 +833,96 @@
         <div class="sponsor-head mob-sponsor-head">Our Sponsors</div>
       </center>
       <div id="sponsorIcons" class="mob-sponsorIcons">
-        <div class="sponsorItem mob-sponsorItem "><a href="https://skill-lync.com/"><img class="mob-img1"
+        <div class="sponsorItem mob-sponsorItem "><a class="sponsorLink" href="https://skill-lync.com/"><img class="mob-img1"
               src="./assets/images/sponsors/Asset 5.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://ibentos.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://ibentos.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 6.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://edvoy.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://edvoy.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 7.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://aws.amazon.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://aws.amazon.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 8.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.freshworks.com/"><img class="mob-img1"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.freshworks.com/"><img class="mob-img1"
               src="./assets/images/sponsors/Asset 9.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://taskade.org/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://taskade.org/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 10.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://startuplab.no/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://startuplab.no/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 11.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.prepbytes.com/"><img class="mob-img1"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.prepbytes.com/"><img class="mob-img1"
               src="./assets/images/sponsors/Asset 12.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="geeksforgeeks.org"><img class="mob-img1"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="geeksforgeeks.org"><img class="mob-img1"
               src="./assets/images/sponsors/Asset 13.png" alt="">
           </a></div>
-        <div class="sponsorItem scrollbox mob-sponsorItem"><a href="https://www.codingninjas.com/"><img class="mob-img"
+        <div class="sponsorItem scrollbox mob-sponsorItem"><a class="sponsorLink" href="https://www.codingninjas.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 14.png" alt=""></a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://primexbt.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://primexbt.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 15.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://codingblocks.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://codingblocks.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 16.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.aicrntu.com/"><img class="mob-img1"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.aicrntu.com/"><img class="mob-img1"
               src="./assets/images/sponsors/Asset 17.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.polygon.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.polygon.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 18.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://athenasquare.org/"><img class="mob-img1"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://athenasquare.org/"><img class="mob-img1"
               src="./assets/images/sponsors/Asset 19.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.finlatics.com/"><img class="mob-img1"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.finlatics.com/"><img class="mob-img1"
               src="./assets/images/sponsors/Asset 21.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://celo.org/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://celo.org/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 22.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.elearnmarkets.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.elearnmarkets.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 23.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.indiaaccelerator.co/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.indiaaccelerator.co/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 24.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="#"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="#"><img class="mob-img"
               src="./assets/images/sponsors/Asset 25.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="http://www.workspace.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="http://www.workspace.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 26.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.skwerup.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.skwerup.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 27.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://devfolio.co/hackathons/applied"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://devfolio.co/hackathons/applied"><img class="mob-img"
               src="./assets/images/sponsors/Asset 28.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://filecoin.io/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://filecoin.io/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 29.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.notesnaka.com/homepage/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.notesnaka.com/homepage/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 30.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.t3.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.t3.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 31.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="#"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="#"><img class="mob-img"
               src="./assets/images/sponsors/Asset 32.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.linuxlinks.com/linux-world/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.linuxlinks.com/linux-world/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 33.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.icreateedu.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.icreateedu.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 34.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://www.digitalocean.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://www.digitalocean.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 35.png" alt="">
           </a></div>
-        <div class="sponsorItem mob-sponsorItem"><a href="https://codingminutes.com/"><img class="mob-img"
+        <div class="sponsorItem mob-sponsorItem"><a class="sponsorLink" href="https://codingminutes.com/"><img class="mob-img"
               src="./assets/images/sponsors/Asset 36.png" alt="">
           </a></div>
       </div>
