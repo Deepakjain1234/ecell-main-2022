@@ -19,9 +19,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <script>
-    // if (window.innerWidth > 500) {
-    //   window.location.href = "index.html";
-    // }
+    if (window.innerWidth > 500) {
+      window.location.href = "index.html";
+    }
   </script>
 </head>
 
@@ -39,11 +39,11 @@
     }
     );
   </script>
-  <div id="main-container" style="width:100vw;">
+  <div id="main-container">
     <div>
       <!-- navbar code -->
       <nav style="opacity: 1;">
-        <a href="https://www.ecellnitb.com"><img id="logo" src="./logo.png"></a>
+        <img id="logo" src="./logo.png">
 
         <ul class="nav nav-items" style="text-transform: uppercase;">
           <div id="hrSlide" style="width: 81px;left: 0px;"></div>
@@ -107,19 +107,13 @@
         <div class="container "
           style="display: flex;align-items: center;justify-content: space-evenly;transform: scale(1.1);">
           <div class="sldBtn" onclick="
-          
-          if(shouldScroll){
-            shouldScroll = false;
       var sclL = document.getElementsByClassName('flex-viewport')[0].scrollLeft;
       // console.log(sclL);
       var bin = sclL - document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
       
-      gsap.to('.flex-viewport', { scrollLeft: bin, duration: 0.2 });
-      setTimeout(function sldfcn(){shouldScroll = true}, 1000);
-          }
+      gsap.to('.flex-viewport', { scrollLeft: bin, duration: 1 });
     " style="
     top: 46px;
-    z-index: 2322;
 ">
             <i class="icon-angle-left gdlr-flex-prev"></i>
           </div>
@@ -365,19 +359,13 @@
             </div>
           </div>
           <div class="sldBtn" onclick="
-          
-          if(shouldScroll){
-            shouldScroll = false;
       var sclL = document.getElementsByClassName('flex-viewport')[0].scrollLeft;
       var bin = sclL + document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
       if(sclL <= 5400)
-      gsap.to('.flex-viewport', { scrollLeft: bin, duration: 0.2 });
-      setTimeout(function feiro(){shouldScroll = true}, 1000);
-          }
+      gsap.to('.flex-viewport', { scrollLeft: bin, duration: 1 });
     " style="
     top: 46px;
     right:0px;
-    z-index: 2000;
 ">
             <i class="icon-angle-right gdlr-flex-next"></i>
           </div>
@@ -391,7 +379,7 @@
 
           body {
             line-height: 1.7;
-            width: 100vw;
+
           }
 
           .container {
@@ -728,23 +716,18 @@
     // navbar shrink script ends here
         </script>
         <script>
-          let shouldScroll = true;
   let gap = 0,
     vel = document.getElementsByClassName('gdlr-speaker-item')[0].getClientRects()[0].width;
   setInterval(function () {
-    if(shouldScroll){
-    gap = document.getElementsByClassName("flex-viewport")[0].scrollLeft;
-    gap += vel;
     gsap.to(".flex-viewport", {
       scrollLeft: gap,
-      duration: 0.2,
+      duration: 0.5,
       ease: Power4.easeOut,
     });
-    
+    gap += vel;
     if (gap >= 5400 || gap <= 0) {
       vel = -vel;
     }
-  }
   }, 4500);
         </script>
       </div>
