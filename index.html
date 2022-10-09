@@ -19,9 +19,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <script>
-if(window.innerWidth<500){
-  window.location.href= "mobile.html";
-}
+// if(window.innerWidth<500){
+//   window.location.href= "mobile.html";
+// }
 </script>
 
 </head>
@@ -802,19 +802,19 @@ if(window.innerWidth<500){
 }
 </style>
 <script>
-  // let gap = 0,
-  //   vel = 285;
-  // setInterval(function () {
-  //   gsap.to(".flex-viewport", {
-  //     scrollLeft: gap,
-  //     duration: 0.5,
-  //     ease: Power4.easeOut,
-  //   });
-  //   gap += vel;
-  //   if (gap >= 3135 || gap <= 0) {
-  //     vel = -vel;
-  //   }
-  // }, 4500);
+  let gap = 0,
+    vel = 285;
+  setInterval(function () {
+    gsap.to(".flex-viewport", {
+      scrollLeft: gap,
+      duration: 0.5,
+      ease: Power4.easeOut,
+    });
+    gap += vel;
+    if (gap >= 3135 || gap <= 0) {
+      vel = -vel;
+    }
+  }, 4500);
 </script>
 </div>
 </div>
@@ -1044,7 +1044,7 @@ if(window.innerWidth<500){
                     display: inline-block;
                     width: 29em;
                     vertical-align: middle;
-                ">Maulana Azad National Institute of Technology, Bhopal</div>
+                " class="mact">Maulana Azad National Institute of Technology, Bhopal</div>
           </div>
         </div>
       </div>
