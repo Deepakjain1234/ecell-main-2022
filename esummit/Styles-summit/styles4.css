@@ -36,6 +36,7 @@ main {
 .sec-1 {
   background-image: url(../Images-summit/Events\ E\ summit\ bg.png);
   background-repeat: no-repeat;
+  
 }
 
 .heading {
@@ -146,6 +147,11 @@ main {
     font-family: "Montserrat", sans-serif;
     font-size: 1.6rem;
   }
+  .sec-1 {
+    background-image: url(../Images-summit/events\ mobile\ bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 @media(min-width:992.1px) {
@@ -163,6 +169,11 @@ main {
     } */
   .landing {
     padding: 0rem 0rem;
+  }
+  .sec-1 {
+    background-image: url(../Images-summit/events\ mobile\ bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 

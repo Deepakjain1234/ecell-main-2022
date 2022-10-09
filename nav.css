@@ -42,7 +42,7 @@
     align-items: center;
     width: 100%;
     transform: translateX(100%);
-    justify-content: space-around;
+    justify-content: center;
     transition: transform 0.5s ease-in;
     padding-right: 23px !important;
     padding-top: 0;
@@ -52,6 +52,7 @@
   .nav-link {
     opacity: 0;
     margin-left: 54px;
+    padding-top: 60px;
   }
 
   .burger {

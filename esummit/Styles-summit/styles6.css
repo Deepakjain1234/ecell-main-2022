@@ -258,11 +258,13 @@ body {
 @media (min-width:1200px) and (max-width: 1350px) {
   .event-card {
     height: 280px;
+    margin: 12px;
   }
 }
 @media (min-width:1110px) and (max-width: 1200px) {
   .event-card {
     height: 310px;
+    margin: 10px;
   }
 }
 
