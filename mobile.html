@@ -19,9 +19,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <script>
-    if (window.innerWidth > 500) {
-      window.location.href = "index.html";
-    }
+    // if (window.innerWidth > 500) {
+    //   window.location.href = "index.html";
+    // }
   </script>
 </head>
 
@@ -43,7 +43,7 @@
     <div>
       <!-- navbar code -->
       <nav style="opacity: 1;">
-        <img id="logo" src="./logo.png">
+        <a href="https://www.ecellnitb.com"><img id="logo" src="./logo.png"></a>
 
         <ul class="nav nav-items" style="text-transform: uppercase;">
           <div id="hrSlide" style="width: 81px;left: 0px;"></div>
@@ -114,6 +114,7 @@
       gsap.to('.flex-viewport', { scrollLeft: bin, duration: 1 });
     " style="
     top: 46px;
+    z-index: 2322;
 ">
             <i class="icon-angle-left gdlr-flex-prev"></i>
           </div>
@@ -366,6 +367,7 @@
     " style="
     top: 46px;
     right:0px;
+    z-index: 2000;
 ">
             <i class="icon-angle-right gdlr-flex-next"></i>
           </div>
