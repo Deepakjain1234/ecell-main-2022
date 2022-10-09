@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@400;600;700;800&display=swap");
 
 body {
-  height:135vh;
+  height:250vh;
   margin: 0px;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to bottom right,#140005, #051537, #000000);
 }
 section {
-  /* height: 100%; */
+   height:250vh;
   width: 100%;
   margin: 0 auto;
-  display: inline-block;
+  display: inline;
   flex-direction: center;
   align-items: center;
   justify-content: self;
@@ -23,10 +24,11 @@ section {
 .faq {
   opacity: 0.8;
   justify-items: center;
+  display:block;
   text-align: center;
   position: relative;
   background-size: 100% 100%;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   cursor: pointer;
   padding-bottom: 1rem;
   border-bottom: 2px, solid, #fff;
@@ -34,8 +36,8 @@ section {
 #particles-js {
   position: absolute;
   width: 100%;
-  height:130vh;
-  background: linear-gradient(to bottom right, #051537, #000000, #140005);
+  /* height:130vh; */
+  
   z-index: -1;
 }
 
@@ -49,7 +51,7 @@ section {
 }
 .header1 {
   color: white;
-  margin-top: 180px;
+  margin-top: 190px;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
@@ -68,7 +70,7 @@ section {
   font-size: 20px;
   margin-right: 25px;
   margin-left: 40px;
-  padding-left: 50px;
+  padding-left:30px;
 }
 .answer {
   max-height: 0px;
@@ -85,7 +87,7 @@ section {
 line-height:35px;
   margin-left:40px;
   margin-right:20px;
-  padding-left: 50px;
+  padding-left:30px;
   letter-spacing: 2px;
 }
 section {
@@ -100,7 +102,8 @@ section {
 }
 svg {
   transition: transform 0.5s ease-in;
-  padding-right: 50px;
+  padding-left:20px;
+  padding-right:20px;
   font-size: 20px;
 }
 
@@ -121,23 +124,59 @@ svg {
   .header1 {
     font-family: "Noto Sans", sans-serif;
     font-weight: 500;
-    font-size: 70px;
+    font-size: 30px;
+   align-items:left;
   }
+    .faq {
+      opacity: 0.8;
+      justify-items: center;
+      text-align:left;
+      position: relative;
+      background-size: 100% 100%;
+      max-width: 1000px;
+      cursor: pointer;
+      padding-bottom: 1rem;
+      border-bottom: 2px, solid, #fff;
+    }
+    .h1{
+padding-left:5px;
+    }
   .question h1 {
     font-family:'Raleway';
     font-weight: 100;
     color: #8d9797;
-    font-size: 30px;
-    margin-right: 25px;
-    margin-left: 40px;
+    font-size:10px;
+     margin-right:0px;
+     margin-left:0px;
     padding-left: 50px;
   }
   .answer h2 {
     font-family: 'Raleway';
      font-weight:50; 
-    font-size: 26px;
+    font-size:10px;
     color: #e9d8e1;
     letter-spacing:2px;
-    line-height:35px;
+    line-height:15px;
+    margin-right:0px;
+    margin-left:0px;
+      padding-left: 50px;
   }
+    .question {
+      display: flex;
+      /* justify-content: space-around;  */
+      align-items:left;
+    }
+  .answer {
+     max-height: 0px;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+    text-align: left;
+    line-height: 15px;
+      margin-right: 0px;
+      margin-left: 0px;
+      padding-left:1px;
+      font-weight:50;
+        font-size: 10px;
+        font-family: 'Raleway';
+        }
 }
