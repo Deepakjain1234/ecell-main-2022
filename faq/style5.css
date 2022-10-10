@@ -55,7 +55,7 @@ section {
 
 .header1 {
   color: white;
-  margin-top: 120px !important;
+  margin-top: 150px !important;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
@@ -75,7 +75,7 @@ section {
   color: #8d9797;
   font-size: 20px;
   margin-right: 25px;
-  margin-left: 40px;
+  margin-left:110px;
   padding-left: 30px;
 }
 
@@ -93,7 +93,7 @@ section {
   color: #e9d8e1;
   padding-top: 1rem;
   line-height: 35px;
-  margin-left: 40px;
+  margin-left:110px;
   margin-right: 20px;
   padding-left: 30px;
   letter-spacing: 2px;

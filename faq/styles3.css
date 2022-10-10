@@ -41,7 +41,7 @@ nav {
   align-items: right;
   height: 132px;
   font-family: 'Raleway', sans-serif;
-  background-color: black;
+  background:linear-gradient( #140005, #000000);
   width: 100vw;
 }
 
