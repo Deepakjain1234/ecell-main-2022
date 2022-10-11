@@ -87,6 +87,8 @@ h1 {
 
 .icons {
   padding: 0px;
+  display: flex;
+  justify-content: center;
 }
 
 /* .card-1:hover{
