@@ -13,6 +13,7 @@ section {
 }
 .question{
   align-items: center;
+  padding-left: 20px;
 }
 
 #faq {
@@ -54,6 +55,7 @@ section {
   border-width:1px;
   color:rgba(0, 0, 0, 1);
   margin-top: 75px;
+  margin-bottom: 70px;
   
   font-weight:bold;
   border-top-left-radius:11px;
@@ -105,6 +107,15 @@ svg {
   padding-left: 20px;
   padding-right: 20px;
   font-size: 20px;
+}
+@keyframes appear{
+  from{
+       transform: translateY(0px);
+  }
+  to{
+    transition: translateY(max-height);
+  }
+
 }
 
 @keyframes fade {

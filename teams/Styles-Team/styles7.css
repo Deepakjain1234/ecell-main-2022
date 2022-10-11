@@ -97,11 +97,13 @@ box-shadow: 5px 5px 5px #0F0E0E;
 .position-text {
   font-size: 1.2rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .big-position-text {
   font-size: 1rem;
   line-height: 1;
+  text-align: center;
 }
 
 .big-name {
@@ -121,4 +123,5 @@ box-shadow: 5px 5px 5px #0F0E0E;
 .card-title {
   padding-top: 5px;
   font-size: 1.3rem;
+  text-align: center;
 }
