@@ -1099,7 +1099,11 @@ color: #C1C1C1;
       <label
         style="font-family: 'Raleway';font-style: normal;font-weight: 600;font-size: 20px;line-height: 23px;text-align: center;letter-spacing: 0.12em;color: #D99343;margin-bottom: 25px;position: relative;top: 9px;display: inline-block;">Write
         to us</label>
-      <form>
+      <form action=”mailto:deeepakjain132@gmail.com” method=”POST”
+
+      enctype=”multipart/form-data”
+      
+      name=”EmailTestForm”>
         <div class="input-container">
           <input type="text" required="" placeholder="Fullname">
         </div>
@@ -1109,7 +1113,7 @@ color: #C1C1C1;
         <div class="input-container">
           <textarea type="text" required="" placeholder="Message"></textarea>
         </div>
-        <button type="button" class="btn">submit</button>
+        <input type="submit" class="btn">
       </form>
     </div>
   </div>
