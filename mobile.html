@@ -929,12 +929,14 @@
       <center><button  value="VIEW MORE" class="submit-btn mob-submit-btn" onclick="function expand(){document.getElementById('sponsorIcons').style.setProperty('height','auto');document.getElementsByTagName('button')[0].remove();} expand();" style="width:114.12px !important">VIEW MORE</button></center>
       
       <div id="request-sponsor" class="mob-reqest-sponsor">
+        <form action="https://formspree.io/f/xnqrzlzn"
+    method="POST"> 
         <center>
           <div id="request-sponsor-hd" class="mob-request-sponsor-hd">
             Become our Sponsor
           </div>
           <div id="form" class="mob-form">
-            <input type="text" name="" id="" class="sponsor-input mob-input" placeholder="Name" style="
+            <input type="text" name="name" id="" class="sponsor-input mob-input" placeholder="Name" style="
             box-sizing: border-box !important;
             width: 267px !important;
             height: 19px !important;
@@ -943,7 +945,7 @@
             border-radius: 2px;
             margin-bottom: 15px;
         "><br>
-            <input type="text" name="" id="" class="sponsor-input mob-input" placeholder="Company Name" style="
+            <input type="text" name="company" id="" class="sponsor-input mob-input" placeholder="Company Name" style="
             box-sizing: border-box !important;
             width: 267px !important;
             height: 19px !important;
@@ -952,7 +954,7 @@
             border-radius: 2px;
             margin-bottom: 15px;
         "><br>
-            <input type="email" name="" id="" class="sponsor-input mob-input" placeholder="Email" style="
+            <input type="email" name="email" id="" class="sponsor-input mob-input" placeholder="Email" style="
             box-sizing: border-box !important;
             width: 267px !important;
             height: 19px !important;
@@ -961,7 +963,7 @@
             border-radius: 2px;
             margin-bottom: 15px;
         "><br>
-            <input type="number" name="" id="" class="sponsor-input mob-input" placeholder="Mobile" style="
+            <input type="number" name="mobile" id="" class="sponsor-input mob-input" placeholder="Mobile" style="
             box-sizing: border-box !important;
             width: 267px !important;
             height: 19px !important;
@@ -970,7 +972,7 @@
             border-radius: 2px;
             margin-bottom: 15px;
         "><br>
-        <textarea class="sponsor-input mob-input" name="" id="" cols="30" rows="10" style="
+        <textarea class="sponsor-input mob-input" name="Message" id="" cols="30" rows="10" style="
         box-sizing: border-box;
         width: 267px;
         height: 91px;
@@ -994,6 +996,7 @@
             <input type="submit" value="SUBMIT" class="submit-btn mob-submit-btn">
           </div>
         </center>
+        </form>
       </div>
     </div>
 
