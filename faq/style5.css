@@ -65,7 +65,7 @@ section {
 
 .question {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -75,15 +75,17 @@ section {
   color: #8d9797;
   font-size: 20px;
   margin-right: 25px;
-  margin-left:110px;
-  padding-left: 30px;
+  margin-left:180px;
+  padding-left: 40px;
+  margin-top:15px;
+  margin-bottom:15px;
 }
 
 .answer {
   max-height: 0px;
   overflow: hidden;
   transition: max-height 1.4s ease;
-  text-align: left;
+  text-align:left;
 }
 
 .answer h2 {
@@ -93,9 +95,9 @@ section {
   color: #e9d8e1;
   padding-top: 1rem;
   line-height: 35px;
-  margin-left:110px;
+  margin-left:180px;
   margin-right: 20px;
-  padding-left: 30px;
+  padding-left: 40px;
   letter-spacing: 2px;
 }
 
